@@ -11,18 +11,9 @@ import com.javdiana.freebleticket.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class SearchFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_search, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val navController = Navigation.findNavController(requireActivity(), R.id.mainHostFragment)
-
-        bottomNavigationView.setupWithNavController(navController)
-    }
 }
