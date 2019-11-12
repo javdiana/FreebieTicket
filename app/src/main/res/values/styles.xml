@@ -8,11 +8,4 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
-
-    <style name="Toolbar"
-        android:layout_marginTop="@dimen/item_spacing_4x"
-        android:layout_marginBottom="@dimen/item_spacing_4x"
-        android:textSize="@dimen/textSizeToolbar">
-    </style>
-
 </resources>
