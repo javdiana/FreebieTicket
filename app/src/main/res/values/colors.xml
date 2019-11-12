@@ -10,4 +10,5 @@
     <color name="colorBlack">#000000</color>
 
     <color name="colorLine">#EEF3F5</color>
+    <color name="colorCircleButton">#989898</color>
 </resources>

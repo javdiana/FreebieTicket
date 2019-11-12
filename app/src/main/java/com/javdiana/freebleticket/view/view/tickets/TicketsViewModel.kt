@@ -1,4 +1,4 @@
-package com.javdiana.freebleticket.view.tickets
+package com.javdiana.freebleticket.view.view.tickets
 
 import androidx.lifecycle.ViewModel
 

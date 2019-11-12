@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/festival_item_id"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/heightItemMyFestivals"
+    android:layout_marginTop="@dimen/marginDefault_25dp"
+    android:background="@drawable/event_placeholder">
+
+    <ImageView
+        android:layout_width="@dimen/defaultButtonSize"
+        android:layout_height="@dimen/defaultButtonSize"
+        android:layout_gravity="end"
+        android:background="@drawable/button_background_grey"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/marginDefault_1dp"
+        android:layout_marginEnd="@dimen/marginDefault_1dp"
+        android:clickable="true"
+        android:focusable="true"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginDefault_15dp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/marginDefault_25dp">
+
+        <TextView
+            android:id="@+id/textviewDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="25/12/19"
+            android:textSize="@dimen/textSizeTextViewItemRecycler"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/work_sans_bold"/>
+
+        <TextView
+            android:id="@+id/textviewFestival"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/work_sans_bold"
+            android:text="Festival:"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/textSizeTextViewFestivals"
+            android:layout_marginTop="@dimen/marginDefault_5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/marginDefault_10dp"
+            android:layout_marginBottom="@dimen/marginDefault_10dp">
+
+            <ImageView
+                android:layout_width="@dimen/smallImageSize"
+                android:layout_height="@dimen/smallImageSize"
+                android:src="@drawable/ic_note"
+                android:layout_gravity="center_vertical|center_horizontal"/>
+
+            <TextView
+                android:id="@+id/textviewPlace"
+                style="@style/TextViewStyleItemRecycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Place:" />
+
+            <ImageView
+                android:layout_width="@dimen/smallImageSize"
+                android:layout_height="@dimen/smallImageSize"
+                android:src="@drawable/ic_tikets"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center_horizontal|center_vertical"/>
+
+            <TextView
+                android:id="@+id/textviewCost"
+                style="@style/TextViewStyleItemRecycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$40-60"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

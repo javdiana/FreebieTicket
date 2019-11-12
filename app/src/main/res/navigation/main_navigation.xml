@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/home"
-        android:name="com.javdiana.freebleticket.view.home.HomeFragment"
+        android:name="com.javdiana.freebleticket.view.view.home.HomeFragment"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/search"
-        android:name="com.javdiana.freebleticket.view.search.SearchFragment"
+        android:name="com.javdiana.freebleticket.view.view.search.SearchFragment"
         tools:layout="@layout/fragment_search" />
 
     <fragment
         android:id="@+id/tickets"
-        android:name="com.javdiana.freebleticket.view.tickets.TicketsFragment"
+        android:name="com.javdiana.freebleticket.view.view.tickets.TicketsFragment"
         tools:layout="@layout/fragment_tickets" />
 
     <fragment
         android:id="@+id/profile"
-        android:name="com.javdiana.freebleticket.view.profile.ProfileFragment"
+        android:name="com.javdiana.freebleticket.view.view.profile.ProfileFragment"
         tools:layout="@layout/fragment_profile" />
 
 </navigation>
