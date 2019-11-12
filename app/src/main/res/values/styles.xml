@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -6,6 +6,14 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorWhite</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="StyleCustomAppBar"
+        android:layout_marginTop="@dimen/marginForNameFragment"
+        android:layout_marginBottom="@dimen/marginForNameFragment"
+        android:textSize="@dimen/textSizeForCustomAppBar"
+        android:textStyle="bold">
     </style>
 
 </resources>

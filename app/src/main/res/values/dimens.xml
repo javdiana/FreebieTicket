@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textSizeForCustomAppBar">16sp</dimen>
+    <dimen name="marginForNameFragment">20dp</dimen>
+    <dimen name="paddingForLines">1dp</dimen>
+</resources>
