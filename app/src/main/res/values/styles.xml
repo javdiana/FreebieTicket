@@ -9,11 +9,10 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
-    <style name="StyleCustomAppBar"
-        android:layout_marginTop="@dimen/marginForNameFragment"
-        android:layout_marginBottom="@dimen/marginForNameFragment"
-        android:textSize="@dimen/textSizeForCustomAppBar"
-        android:textStyle="bold">
+    <style name="Toolbar"
+        android:layout_marginTop="@dimen/item_spacing_4x"
+        android:layout_marginBottom="@dimen/item_spacing_4x"
+        android:textSize="@dimen/textSizeToolbar">
     </style>
 
 </resources>

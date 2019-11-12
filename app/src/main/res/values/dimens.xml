@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="textSizeForCustomAppBar">16sp</dimen>
-    <dimen name="marginForNameFragment">20dp</dimen>
-    <dimen name="paddingForLines">1dp</dimen>
+    <dimen name="item_spacing_1x">4dp</dimen>
+    <dimen name="item_spacing_2x">8dp</dimen>
+    <dimen name="item_spacing_3x">12dp</dimen>
+    <dimen name="item_spacing_4x">16dp</dimen>
+    <dimen name="item_spacing_5x">20dp</dimen>
+    <dimen name="item_spacing_6x">24dp</dimen>
+    <dimen name="item_spacing_7x">28dp</dimen>
+    <dimen name="item_spacing_8x">32dp</dimen>
+
+    <dimen name="linePadding">1dp</dimen>
+    <dimen name="textSizeToolbar">18sp</dimen>
 </resources>

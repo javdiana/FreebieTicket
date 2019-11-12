@@ -20,7 +20,7 @@
     
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/paddingForLines"
+        android:layout_height="@dimen/linePadding"
         android:background="@color/colorLine"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

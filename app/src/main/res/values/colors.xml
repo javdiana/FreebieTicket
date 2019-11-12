@@ -7,7 +7,7 @@
     <color name="colorGrey">#FFC2C6CE</color>
     <color name="colorPink">#FFFC1055</color>
     <color name="colorWhite">#FFFFFFFF</color>
-    <color name="colorBlack">#0A0A0A</color>
+    <color name="colorBlack">#000000</color>
 
     <color name="colorLine">#EEF3F5</color>
 </resources>
