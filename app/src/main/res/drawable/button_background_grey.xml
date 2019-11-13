@@ -3,8 +3,8 @@
     <item>
         <shape android:shape="oval">
             <solid android:color="@color/colorCircleButtonTransparency" />
-            <size android:height="@dimen/defaultButtonSize"
-                    android:width="@dimen/defaultButtonSize"/>
+            <size android:height="@dimen/buttonCloseSize"
+                    android:width="@dimen/buttonCloseSize"/>
         </shape>
     </item>
 </selector>

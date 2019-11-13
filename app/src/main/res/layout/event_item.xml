@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,8 +6,8 @@
     android:id="@+id/eventItem"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/heightItemMyFestivals"
-    android:layout_marginEnd="@dimen/marginDefault_15dp">
+    android:layout_height="@dimen/heightItemMyEvents"
+    android:layout_marginEnd="@dimen/margin_15dp">
 
     <ImageView
         android:id="@+id/imageViewBackground"
@@ -23,10 +22,10 @@
         android:background="@drawable/image_background"/>
 
     <ImageView
-        android:layout_width="@dimen/defaultImageViewSize"
-        android:layout_height="@dimen/defaultImageViewSize"
+        android:layout_width="@dimen/buttonCloseSize"
+        android:layout_height="@dimen/buttonCloseSize"
         android:background="@drawable/button_background_grey"
-        android:padding="@dimen/paddingImage"
+        android:padding="@dimen/paddingImageStandart"
         android:src="@drawable/ic_close"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -37,7 +36,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginDefault_15dp"
+        android:layout_marginStart="@dimen/margin_15dp"
         android:gravity="bottom"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,18 +59,18 @@
             android:fontFamily="@font/work_sans_bold"
             android:text="Festival:"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textSizeTextViewFestivals"
-            android:layout_marginTop="@dimen/marginDefault_5dp"/>
+            android:textSize="@dimen/textSizeTextViewEvents"
+            android:layout_marginTop="@dimen/margin_5dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="bottom"
             android:orientation="horizontal"
-            android:layout_marginTop="@dimen/marginDefault_10dp"
-            android:layout_marginBottom="@dimen/marginDefault_10dp"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:layout_marginBottom="@dimen/margin_10dp"
             android:alpha=".7">
-<!--            -->
+
 
             <ImageView
                 android:layout_width="@dimen/smallImageSize"
@@ -81,11 +80,11 @@
                 />
 
             <TextView
-                android:id="@+id/textviewPlace"
+                android:id="@+id/textviewType"
                 style="@style/TextViewStyleItemRecycler"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Place:" />
+                android:text="Type:" />
 
             <ImageView
                 android:layout_width="@dimen/smallImageSize"

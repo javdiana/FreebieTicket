@@ -34,7 +34,7 @@ class EventsAdapter :
             itemView.imageViewBackground.clipToOutline = true
 
             itemView.textviewFestival.text = event.name
-            itemView.textviewPlace.text = event.place
+            itemView.textviewType.text = event.type
             itemView.textviewCost.text = "€${event.costLow}-${event.costHigh}"
         }
     }

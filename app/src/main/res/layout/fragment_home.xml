@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/toolbarHeight"
         android:background="@drawable/toolbar_background"
         android:gravity="center">
 
@@ -25,15 +25,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/marginDefault_15dp"
+            android:layout_marginStart="@dimen/margin_15dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginTopTextView"
+                android:layout_marginTop="@dimen/marginTopTextViewParagraph"
                 android:orientation="horizontal"
-                android:layout_marginEnd="@dimen/marginDefault_17dp">
+                android:layout_marginEnd="@dimen/margin_17dp">
 
                 <TextView
                     style="@style/TextViewStyleWithoutMargins"
@@ -47,16 +47,16 @@
                     android:layout_width="@dimen/mainButtonSize"
                     android:layout_height="@dimen/mainButtonSize"
                     android:background="@drawable/button_background_white"
-                    android:src="@drawable/ic_reverse"
-                    android:padding="@dimen/paddingImage" />
+                    android:src="@drawable/ic_filters"
+                    android:padding="@dimen/paddingImageReverse" />
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recylcerviewMyFestivals"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/heightItemMyFestivals"
-                android:layout_marginTop="@dimen/marginDefault_25dp"/>
+                android:layout_height="@dimen/heightItemMyEvents"
+                android:layout_marginTop="@dimen/item_spacing_4x"/>
 
             <TextView
                 style="@style/TextViewStyleParagraphs"
@@ -67,7 +67,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recylcerviewCollections"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/heightRecyclerViewCollections" />
+                android:layout_height="@dimen/heightItemCollections"
+                android:layout_marginTop="@dimen/item_spacing_4x"/>
 
             <TextView
                 style="@style/TextViewStyleParagraphs"
@@ -78,7 +79,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewDiscover"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/heightRecyclerViewDiscover" />
+                android:layout_height="@dimen/heightItemDiscover"
+                android:layout_marginTop="@dimen/item_spacing_4x"/>
 
         </LinearLayout>
     </ScrollView>

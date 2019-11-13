@@ -16,26 +16,26 @@
     <dimen name="textSizeTextViewItemRecycler">12sp</dimen>
     <dimen name="textSizeToolbar">18sp</dimen>
     <dimen name="textSizeTextViewParagraph">28sp</dimen>
-    <dimen name="textSizeTextViewFestivals">22sp</dimen>
+    <dimen name="textSizeTextViewEvents">22sp</dimen>
 
 <!--    heights of rv-->
-    <dimen name="heightItemMyFestivals">256dp</dimen>
-    <dimen name="heightRecyclerViewCollections">161dp</dimen>
-    <dimen name="heightRecyclerViewDiscover">56dp</dimen>
+    <dimen name="heightItemMyEvents">256dp</dimen>
+    <dimen name="heightItemCollections">161dp</dimen>
+    <dimen name="heightItemDiscover">56dp</dimen>
 
 <!--    margins-->
-    <dimen name="marginTopTextView">45dp</dimen>
-    <dimen name="marginStartTextView">45dp</dimen>
-    <dimen name="marginDefault_25dp">25dp</dimen>
-    <dimen name="marginDefault_10dp">10dp</dimen>
-    <dimen name="marginDefault_5dp">5dp</dimen>
-    <dimen name="marginDefault_2dp">2dp</dimen>
-    <dimen name="marginDefault_15dp">15dp</dimen>
-    <dimen name="marginDefault_17dp">17dp</dimen>
+    <dimen name="marginTopTextViewParagraph">32dp</dimen>
+    <dimen name="margin_25dp">25dp</dimen>
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
+    <dimen name="margin_2dp">2dp</dimen>
+    <dimen name="margin_15dp">15dp</dimen>
+    <dimen name="margin_17dp">17dp</dimen>
 
     <dimen name="smallImageSize">10dp</dimen>
-    <dimen name="defaultImageViewSize">40dp</dimen>
-    <dimen name="defaultButtonSize">30dp</dimen>
+    <dimen name="buttonCloseSize">30dp</dimen>
     <dimen name="mainButtonSize">32dp</dimen>
-    <dimen name="paddingImage">10dp</dimen>
+    <dimen name="paddingImageStandart">10dp</dimen>
+    <dimen name="paddingImageReverse">9.354dp</dimen>
+    <dimen name="toolbarHeight">64dp</dimen>
 </resources>

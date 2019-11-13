@@ -4,7 +4,7 @@ data class Event(
     val id: Long,
     val name: String,
     val date: Long?,//add parsers
-    val place: String,
+    val type: String,
     val costLow: Int,
     val costHigh: Int
 )
