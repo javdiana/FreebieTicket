@@ -34,6 +34,7 @@
     <dimen name="marginDefault_17dp">17dp</dimen>
 
     <dimen name="smallImageSize">10dp</dimen>
+    <dimen name="defaultImageViewSize">40dp</dimen>
     <dimen name="defaultButtonSize">30dp</dimen>
     <dimen name="mainButtonSize">32dp</dimen>
     <dimen name="paddingImage">10dp</dimen>

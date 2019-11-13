@@ -23,13 +23,15 @@
         android:background="@drawable/image_background"/>
 
     <ImageView
-        android:layout_width="@dimen/defaultButtonSize"
-        android:layout_height="@dimen/defaultButtonSize"
+        android:layout_width="@dimen/defaultImageViewSize"
+        android:layout_height="@dimen/defaultImageViewSize"
         android:background="@drawable/button_background_grey"
-        android:src="@drawable/ic_close"
         android:padding="@dimen/paddingImage"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/ic_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="@dimen/item_spacing_2x"
+        android:layout_marginTop="@dimen/item_spacing_2x"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
