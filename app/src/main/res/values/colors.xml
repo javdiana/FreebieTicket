@@ -5,10 +5,11 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="colorGrey">#FFC2C6CE</color>
+    <color name="colorShadows">#F1F1F1</color>
     <color name="colorPink">#FFFC1055</color>
     <color name="colorWhite">#FFFFFFFF</color>
     <color name="colorBlack">#000000</color>
 
     <color name="colorLine">#EEF3F5</color>
-    <color name="colorCircleButton">#989898</color>
+    <color name="colorCircleButtonTransparency">#59668c</color>
 </resources>

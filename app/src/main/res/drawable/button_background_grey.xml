@@ -2,8 +2,9 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="oval">
-            <solid android:color="@color/colorCircleButton" />
-            <corners android:radius="30dp" />
+            <solid android:color="@color/colorCircleButtonTransparency" />
+            <size android:height="@dimen/defaultButtonSize"
+                    android:width="@dimen/defaultButtonSize"/>
         </shape>
     </item>
 </selector>

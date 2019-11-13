@@ -28,11 +28,13 @@
     <dimen name="marginStartTextView">45dp</dimen>
     <dimen name="marginDefault_25dp">25dp</dimen>
     <dimen name="marginDefault_10dp">10dp</dimen>
-    <dimen name="marginDefault_5dp">10dp</dimen>
-    <dimen name="marginDefault_1dp">10dp</dimen>
+    <dimen name="marginDefault_5dp">5dp</dimen>
+    <dimen name="marginDefault_2dp">2dp</dimen>
     <dimen name="marginDefault_15dp">15dp</dimen>
+    <dimen name="marginDefault_17dp">17dp</dimen>
 
     <dimen name="smallImageSize">10dp</dimen>
     <dimen name="defaultButtonSize">30dp</dimen>
     <dimen name="mainButtonSize">32dp</dimen>
+    <dimen name="paddingImage">10dp</dimen>
 </resources>

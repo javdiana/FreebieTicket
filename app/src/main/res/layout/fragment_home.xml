@@ -13,8 +13,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/item_spacing_4x"
-            android:layout_marginBottom="@dimen/item_spacing_4x"
             android:fontFamily="@font/work_sans_bold"
             android:text="@string/home"
             android:textSize="@dimen/textSizeToolbar" />
@@ -27,15 +25,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/marginDefault_25dp"
-            android:layout_marginEnd="@dimen/marginDefault_25dp"
+            android:layout_marginStart="@dimen/marginDefault_15dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginTopTextView"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/marginDefault_17dp">
 
                 <TextView
                     style="@style/TextViewStyleWithoutMargins"
@@ -49,14 +47,16 @@
                     android:layout_width="@dimen/mainButtonSize"
                     android:layout_height="@dimen/mainButtonSize"
                     android:background="@drawable/button_background_white"
-                    android:src="@drawable/ic_reverse" />
+                    android:src="@drawable/ic_reverse"
+                    android:padding="@dimen/paddingImage" />
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recylcerviewMyFestivals"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/heightItemMyFestivals" />
+                android:layout_height="@dimen/heightItemMyFestivals"
+                android:layout_marginTop="@dimen/marginDefault_25dp"/>
 
             <TextView
                 style="@style/TextViewStyleParagraphs"

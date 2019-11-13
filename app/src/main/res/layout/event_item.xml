@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/festival_item_id"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/eventItem"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="@dimen/heightItemMyFestivals"
-    android:layout_marginTop="@dimen/marginDefault_25dp"
-    android:background="@drawable/event_placeholder">
+    android:layout_marginEnd="@dimen/marginDefault_15dp">
+
+    <ImageView
+        android:id="@+id/imageViewBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/event_placeholder"
+        android:scaleType="centerCrop"
+        android:background="@drawable/image_background"/>
 
     <ImageView
         android:layout_width="@dimen/defaultButtonSize"
         android:layout_height="@dimen/defaultButtonSize"
-        android:layout_gravity="end"
         android:background="@drawable/button_background_grey"
-        android:src="@drawable/ic_delete"
+        android:src="@drawable/ic_close"
+        android:padding="@dimen/paddingImage"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/marginDefault_1dp"
-        android:layout_marginEnd="@dimen/marginDefault_1dp"
-        android:clickable="true"
-        android:focusable="true"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -30,8 +40,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="@dimen/marginDefault_25dp">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/textviewDate"
@@ -58,13 +67,16 @@
             android:gravity="bottom"
             android:orientation="horizontal"
             android:layout_marginTop="@dimen/marginDefault_10dp"
-            android:layout_marginBottom="@dimen/marginDefault_10dp">
+            android:layout_marginBottom="@dimen/marginDefault_10dp"
+            android:alpha=".7">
+<!--            -->
 
             <ImageView
                 android:layout_width="@dimen/smallImageSize"
                 android:layout_height="@dimen/smallImageSize"
                 android:src="@drawable/ic_note"
-                android:layout_gravity="center_vertical|center_horizontal"/>
+                android:layout_gravity="center_vertical|center_horizontal"
+                />
 
             <TextView
                 android:id="@+id/textviewPlace"
@@ -90,5 +102,6 @@
 
         </LinearLayout>
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
