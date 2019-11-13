@@ -6,8 +6,8 @@
     android:id="@+id/eventItem"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/heightItemMyEvents"
-    android:layout_marginEnd="@dimen/margin_15dp">
+    android:layout_height="256dp"
+    android:layout_marginEnd="16dp">
 
     <ImageView
         android:id="@+id/imageViewBackground"
@@ -25,7 +25,7 @@
         android:layout_width="@dimen/buttonCloseSize"
         android:layout_height="@dimen/buttonCloseSize"
         android:background="@drawable/button_background_grey"
-        android:padding="@dimen/paddingImageStandart"
+        android:padding="@dimen/paddingImage"
         android:src="@drawable/ic_close"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,7 +36,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_15dp"
+        android:layout_marginStart="16dp"
         android:gravity="bottom"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,8 +47,8 @@
             android:id="@+id/textviewDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="25/12/19"
-            android:textSize="@dimen/textSizeTextViewItemRecycler"
+            tools:text="25/12/19"
+            android:textSize="@dimen/textSizeItemEventsRvDate"
             android:textColor="@color/colorWhite"
             android:fontFamily="@font/work_sans_bold"/>
 
@@ -57,24 +57,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/work_sans_bold"
-            android:text="Festival:"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textSizeTextViewEvents"
-            android:layout_marginTop="@dimen/margin_5dp"/>
+            android:textSize="@dimen/textSizeItemEventsRvTitle"
+            android:layout_marginTop="6dp"
+            tools:text="Festival:" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="bottom"
             android:orientation="horizontal"
-            android:layout_marginTop="@dimen/margin_10dp"
-            android:layout_marginBottom="@dimen/margin_10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:alpha=".7">
 
 
             <ImageView
-                android:layout_width="@dimen/smallImageSize"
-                android:layout_height="@dimen/smallImageSize"
+                android:layout_width="@dimen/imageSizeNote"
+                android:layout_height="@dimen/imageSizeNote"
                 android:src="@drawable/ic_note"
                 android:layout_gravity="center_vertical|center_horizontal"
                 />
@@ -84,11 +84,11 @@
                 style="@style/TextViewStyleItemRecycler"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Type:" />
+                tools:text="Type:" />
 
             <ImageView
-                android:layout_width="@dimen/smallImageSize"
-                android:layout_height="@dimen/smallImageSize"
+                android:layout_width="@dimen/imageSizeTicket"
+                android:layout_height="@dimen/imageSizeTicket"
                 android:src="@drawable/ic_tikets"
                 android:layout_marginStart="10dp"
                 android:layout_gravity="center_horizontal|center_vertical"/>
@@ -98,7 +98,7 @@
                 style="@style/TextViewStyleItemRecycler"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$40-60"/>
+                tools:text="$40-60"/>
 
 
         </LinearLayout>

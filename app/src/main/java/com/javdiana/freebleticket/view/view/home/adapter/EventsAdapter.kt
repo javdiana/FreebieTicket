@@ -6,11 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.javdiana.freebleticket.R.drawable
 import com.javdiana.freebleticket.R.layout
 import com.javdiana.freebleticket.view.model.entity.Event
+import com.javdiana.freebleticket.view.utils.DateUtil
 import com.javdiana.freebleticket.view.view.home.adapter.EventsAdapter.EventHolder
 import kotlinx.android.synthetic.main.event_item.view.*
 
@@ -32,7 +30,7 @@ class EventsAdapter :
         RecyclerView.ViewHolder(itemView) {
         fun bind(event: Event) {
             itemView.imageViewBackground.clipToOutline = true
-
+            itemView.textviewDate.text = DateUtil.dateToString(event.date)
             itemView.textviewFestival.text = event.name
             itemView.textviewType.text = event.type
             itemView.textviewCost.text = "€${event.costLow}-${event.costHigh}"

@@ -10,20 +10,20 @@
     </style>
 
     <style name="TextViewStyleParagraphs">
-        <item name="android:textSize">@dimen/textSizeTextViewParagraph</item>
+        <item name="android:textSize">@dimen/textSizeTextViewMainTitles</item>
         <item name="android:fontFamily">@font/work_sans_bold</item>
-        <item name="android:layout_marginTop">@dimen/marginTopTextViewParagraph</item>
+        <item name="android:layout_marginTop">32dp</item>
     </style>
 
     <style name="TextViewStyleWithoutMargins">
-        <item name="android:textSize">@dimen/textSizeTextViewParagraph</item>
+        <item name="android:textSize">@dimen/textSizeTextViewMainTitles</item>
         <item name="android:fontFamily">@font/work_sans_bold</item>
     </style>
 
     <style name="TextViewStyleItemRecycler">
-        <item name="android:textSize">@dimen/textSizeTextViewItemRecycler</item>
+        <item name="android:textSize">@dimen/textSizeItemEventsRvDate</item>
         <item name="android:fontFamily">@font/work_sans_bold</item>
-        <item name="android:layout_marginStart">@dimen/margin_5dp</item>
+        <item name="android:layout_marginStart">6dp</item>
         <item name="android:textColor">@color/colorWhite</item>
     </style>
 

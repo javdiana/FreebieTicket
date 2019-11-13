@@ -15,15 +15,9 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        val appModule = module {
-            single<EventRepository> { EventRepositoryImpl() }
-            viewModel { HomeViewModel(get()) }
-        }
-
         startKoin{
-            androidLogger(Level.DEBUG)
             androidContext(this@App)
-            modules(appModule)
+            modules(injectFeature())
         }
 
     }
