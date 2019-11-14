@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/eventItem"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="256dp"
+    android:layout_marginEnd="16dp">
+
+    <ImageView
+        android:id="@+id/imageViewBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/event_placeholder"
+        android:scaleType="centerCrop"
+        android:background="@drawable/image_background"/>
+
+    <ImageView
+        android:layout_width="@dimen/buttonCloseSize"
+        android:layout_height="@dimen/buttonCloseSize"
+        android:background="@drawable/button_background_grey"
+        android:padding="@dimen/paddingImage"
+        android:src="@drawable/ic_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="@dimen/item_spacing_2x"
+        android:layout_marginTop="@dimen/item_spacing_2x"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textviewDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="25/12/19"
+            android:textSize="@dimen/textSizeItemEventsRvDate"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/work_sans_bold"/>
+
+        <TextView
+            android:id="@+id/textviewFestival"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/work_sans_bold"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/textSizeItemEventsRvTitle"
+            android:layout_marginTop="6dp"
+            tools:text="Festival:" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:alpha=".7">
+
+
+            <ImageView
+                android:layout_width="@dimen/imageSizeNote"
+                android:layout_height="@dimen/imageSizeNote"
+                android:src="@drawable/ic_note"
+                android:layout_gravity="center_vertical|center_horizontal"
+                />
+
+            <TextView
+                android:id="@+id/textviewType"
+                style="@style/TextViewStyleItemRecycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Type:" />
+
+            <ImageView
+                android:layout_width="@dimen/imageSizeTicket"
+                android:layout_height="@dimen/imageSizeTicket"
+                android:src="@drawable/ic_tikets"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center_horizontal|center_vertical"/>
+
+            <TextView
+                android:id="@+id/textviewCost"
+                style="@style/TextViewStyleItemRecycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="$40-60"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

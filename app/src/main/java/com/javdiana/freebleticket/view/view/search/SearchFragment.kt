@@ -1,14 +1,11 @@
-package com.javdiana.freebleticket.view.search
+package com.javdiana.freebleticket.view.view.search
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
-import androidx.navigation.ui.setupWithNavController
 import com.javdiana.freebleticket.R
-import kotlinx.android.synthetic.main.activity_main.*
 
 class SearchFragment : Fragment() {
 

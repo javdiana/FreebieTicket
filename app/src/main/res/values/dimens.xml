@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="item_spacing_1x">4dp</dimen>
     <dimen name="item_spacing_2x">8dp</dimen>
-    <dimen name="item_spacing_3x">12dp</dimen>
     <dimen name="item_spacing_4x">16dp</dimen>
-    <dimen name="item_spacing_5x">20dp</dimen>
-    <dimen name="item_spacing_6x">24dp</dimen>
-    <dimen name="item_spacing_7x">28dp</dimen>
-    <dimen name="item_spacing_8x">32dp</dimen>
 
     <dimen name="linePadding">1dp</dimen>
-    <dimen name="textSizeToolbar">18sp</dimen>
+
+<!--    text sizes-->
+    <dimen name="textSizeItemEventsRvDate">12sp</dimen>
+    <dimen name="textSizeItemEventsRvCost">12sp</dimen>
+    <dimen name="textSizeItemEventsRvType">12sp</dimen>
+    <dimen name="textSizeToolbarHome">16sp</dimen>
+    <dimen name="textSizeTextViewMainTitles">28sp</dimen>
+    <dimen name="textSizeItemEventsRvTitle">22sp</dimen>
+
+<!--    view sizes-->
+    <dimen name="imageSizeNote">8dp</dimen>
+    <dimen name="imageSizeTicket">8dp</dimen>
+    <dimen name="buttonCloseSize">28dp</dimen>
+    <dimen name="mainButtonSize">32dp</dimen>
+    <dimen name="paddingImage">8dp</dimen>
+    <dimen name="toolbarHeightHome">64dp</dimen>
 </resources>
