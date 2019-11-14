@@ -5,7 +5,7 @@
     package="com.javdiana.freebleticket">
 
     <application
-        android:name=".view.view.main.AppConfigKoin"
+        android:name=".view.view.main.FreebleApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
