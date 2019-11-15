@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -25,22 +26,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
                 android:orientation="horizontal"
-                android:layout_marginEnd="16dp">
+                android:layout_marginEnd="32dp">
 
                 <TextView
-                    style="@style/TextViewStyleWithoutMargins"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/for_you" />
+                    android:text="@string/for_you"
+                    style="@style/TextViewStyleTitle" />
 
                 <ImageView
                     android:id="@+id/buttonSetFilters"
@@ -53,34 +52,37 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recylcerviewMyFestivals"
+                android:id="@+id/rvEvents"
                 android:layout_width="match_parent"
                 android:layout_height="256dp"
-                android:layout_marginTop="@dimen/item_spacing_4x"/>
+                android:layout_marginTop="@dimen/item_spacing_4x"
+                android:layout_marginStart="@dimen/item_spacing_4x"/>
 
             <TextView
-                style="@style/TextViewStyleParagraphs"
+                style="@style/TextViewStyleTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/collections" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recylcerviewCollections"
+                android:id="@+id/rvCollections"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:layout_marginTop="@dimen/item_spacing_4x"/>
+                android:layout_marginTop="@dimen/item_spacing_4x"
+                android:layout_marginStart="@dimen/item_spacing_4x"/>
 
             <TextView
-                style="@style/TextViewStyleParagraphs"
+                style="@style/TextViewStyleTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/discover" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewDiscover"
+                android:id="@+id/rvDiscover"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:layout_marginTop="@dimen/item_spacing_4x"/>
+                android:layout_marginTop="@dimen/item_spacing_4x"
+                android:layout_marginBottom="@dimen/item_spacing_4x"/>
 
         </LinearLayout>
     </ScrollView>

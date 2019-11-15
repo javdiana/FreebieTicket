@@ -7,10 +7,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="256dp"
-    android:layout_marginEnd="16dp">
+    android:layout_marginEnd="@dimen/item_spacing_4x">
 
     <ImageView
-        android:id="@+id/imageViewBackground"
+        android:id="@+id/imageEvent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,7 +36,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/item_spacing_4x"
         android:gravity="bottom"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,8 +73,8 @@
 
 
             <ImageView
-                android:layout_width="@dimen/imageSizeNote"
-                android:layout_height="@dimen/imageSizeNote"
+                android:layout_width="@dimen/item_spacing_2x"
+                android:layout_height="@dimen/item_spacing_2x"
                 android:src="@drawable/ic_note"
                 android:layout_gravity="center_vertical|center_horizontal"
                 />
@@ -87,8 +87,8 @@
                 tools:text="Type:" />
 
             <ImageView
-                android:layout_width="@dimen/imageSizeTicket"
-                android:layout_height="@dimen/imageSizeTicket"
+                android:layout_width="@dimen/item_spacing_2x"
+                android:layout_height="@dimen/item_spacing_2x"
                 android:src="@drawable/ic_tikets"
                 android:layout_marginStart="10dp"
                 android:layout_gravity="center_horizontal|center_vertical"/>

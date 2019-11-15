@@ -12,4 +12,5 @@
 
     <color name="colorLine">#EEF3F5</color>
     <color name="colorCircleButtonTransparency">#59668c</color>
+    <color name="colorSeekBarFilter">#E1EAE9</color>
 </resources>

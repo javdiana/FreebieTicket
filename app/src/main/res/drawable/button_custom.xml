@@ -5,20 +5,21 @@
             <item>
                 <shape android:shape="rectangle">
                     <solid android:color="@color/colorShadows" />
-                    <padding android:bottom="4dp" />
-                    <padding android:top="4dp" />
-                    <padding android:left="4dp" />
-                    <padding android:right="4dp" />
-                    <corners android:radius="10dp" />
+                    <size android:height="56dp"/>
+                    <padding android:bottom="1dp" />
+                    <padding android:top="1dp" />
+                    <padding android:left="1dp" />
+                    <padding android:right="1dp"/>
+                    <corners android:radius="30dp"/>
                 </shape>
             </item>
             <item>
                 <shape android:shape="rectangle">
                     <solid android:color="@color/colorWhite" />
-                    <corners android:radius="10dp" />
+                    <size android:height="56dp"/>
+                    <corners android:radius="30dp"/>
                 </shape>
             </item>
         </layer-list>
-
     </item>
 </selector>

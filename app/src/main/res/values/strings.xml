@@ -4,4 +4,6 @@
     <string name="for_you">For you</string>
     <string name="collections">Collections</string>
     <string name="discover">Discover</string>
+
+    <string name="learnmore"><![CDATA[LearnMore >]]></string>
 </resources>

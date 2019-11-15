@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.javdiana.freebleticket.R
+import com.javdiana.freebleticket.view.view.home.adapter.CustomButtonAdapter
 import com.javdiana.freebleticket.view.view.home.adapter.EventsAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -26,19 +27,43 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        homeViewModel.getList()
+        homeViewModel.getListEvents()
+        homeViewModel.getListCollections()
+        homeViewModel.getListButtons()
+
         initEvents()
+        initCollections()
+        initDiscovers()
     }
 
     private fun initEvents() {
-        recylcerviewMyFestivals.layoutManager =
+        rvEvents.layoutManager =
             LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        val adapter = EventsAdapter()
-        recylcerviewMyFestivals.adapter = adapter
+        val adapter = EventsAdapter(R.layout.item_event)
+        rvEvents.adapter = adapter
         homeViewModel.events.observe(this, Observer {
             adapter.submitList(it)
         })
     }
 
+    private fun initCollections() {
+        rvCollections.layoutManager =
+            LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        val adapter = EventsAdapter(R.layout.item_collection)
+        rvCollections.adapter = adapter
+        homeViewModel.collections.observe(this, Observer {
+            adapter.submitList(it)
+        })
+    }
+
+    private fun initDiscovers() {
+        rvDiscover.layoutManager =
+            LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        val adapter = CustomButtonAdapter()
+        rvDiscover.adapter = adapter
+        homeViewModel.buttons.observe(this, Observer {
+            adapter.submitList(it)
+        })
+    }
 
 }
