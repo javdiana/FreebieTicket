@@ -40,26 +40,31 @@ class HomeFragment : Fragment() {
         initDiscovers()
     }
 
+    private val detailItem: (Event) -> Unit = {
+        startActivity(Intent(this.activity, DetailsActivity::class.java).apply {
+            putExtra(Constants.EXTRA_ID, it.id)
+        })
+    }
+
+    private val deleteItem: (Event) -> Unit = {
+        homeViewModel.deleteEvent(it)
+        homeViewModel.getListEvents()
+    }
+
     private fun initEvents() {
         rvEvents.layoutManager =
             LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        val adapter = EventsAdapter(R.layout.item_event, detailItem)
+        val adapter = EventsAdapter(R.layout.item_event, detailItem, deleteItem)
         rvEvents.adapter = adapter
         homeViewModel.events.observe(this, Observer {
             adapter.submitList(it)
         })
     }
 
-    private val detailItem:(Event)-> Unit = {
-        val intent = Intent(this.activity, DetailsActivity::class.java)
-        intent.putExtra(Constants.EXTRA_ID, it.id)
-        startActivity(intent)
-    }
-
     private fun initCollections() {
         rvCollections.layoutManager =
             LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        val adapter = EventsAdapter(R.layout.item_collection, detailItem)
+        val adapter = EventsAdapter(R.layout.item_collection, detailItem, deleteItem)
         rvCollections.adapter = adapter
         homeViewModel.collections.observe(this, Observer {
             adapter.submitList(it)

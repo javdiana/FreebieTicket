@@ -5,11 +5,16 @@
     <string name="collections">Collections</string>
     <string name="discover">Discover</string>
 
-    <string name="learnmore"><![CDATA[LearnMore >]]></string>
+    <string name="learn_more"><![CDATA[Learn More >]]></string>
     <string name="details">Details</string>
     <string name="updates">Updates</string>
     <string name="location">Location</string>
     <string name="performers">Performers</string>
     <string name="organizers">Organizers</string>
     <string name="buy_tickets">Buy tickets</string>
+
+    <string name="show_2_string">"€%S-%S"</string>
+    <string name="content_description">"Content description"</string>
+    <string name="tickets_bought_message">"Tickets bought!"</string>
+
 </resources>

@@ -6,4 +6,6 @@ interface EventRepository {
     fun getEvents(): ArrayList<Event>
 
     fun getEvent(id:Long) : Event
+
+    fun deleteEvent(event:Event)
 }

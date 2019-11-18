@@ -2,17 +2,18 @@ package com.javdiana.freebleticket.view.view.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.javdiana.freebleticket.view.model.entity.CustomButton
+import com.javdiana.freebleticket.view.model.entity.Category
 import com.javdiana.freebleticket.view.model.entity.Event
-import com.javdiana.freebleticket.view.model.repository.CustomButtonRepository
+import com.javdiana.freebleticket.view.model.repository.CategoryRepository
 import com.javdiana.freebleticket.view.model.repository.EventRepository
 
 class HomeViewModel(
     private val eventRepository: EventRepository,
-    private val customButtonRepository: CustomButtonRepository) : ViewModel() {
+    private val categoryRepository: CategoryRepository
+) : ViewModel() {
     val events = MutableLiveData<ArrayList<Event>>()
     val collections = MutableLiveData<ArrayList<Event>>()
-    val buttons = MutableLiveData<ArrayList<CustomButton>>()
+    val buttons = MutableLiveData<ArrayList<Category>>()
 
     fun getListEvents() {
         events.postValue(eventRepository.getEvents())
@@ -22,7 +23,12 @@ class HomeViewModel(
         collections.postValue(eventRepository.getEvents())
     }
 
-    fun getListButtons(){
-        buttons.postValue(customButtonRepository.getDiscoverButtons())
+    fun getListButtons() {
+        buttons.postValue(categoryRepository.getCategories())
+    }
+
+    fun deleteEvent(event:Event) {
+        events.value?.remove(event)
+        eventRepository.deleteEvent(event)
     }
 }

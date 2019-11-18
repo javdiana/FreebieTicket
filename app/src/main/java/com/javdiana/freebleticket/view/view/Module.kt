@@ -1,7 +1,7 @@
 package com.javdiana.freebleticket.view.view
 
-import com.javdiana.freebleticket.view.model.repository.CustomButtonRepository
-import com.javdiana.freebleticket.view.model.repository.CustomButtonRepositoryImp
+import com.javdiana.freebleticket.view.model.repository.CategoryRepository
+import com.javdiana.freebleticket.view.model.repository.CategoryRepositoryImp
 import com.javdiana.freebleticket.view.model.repository.EventRepository
 import com.javdiana.freebleticket.view.model.repository.EventRepositoryImpl
 import com.javdiana.freebleticket.view.view.details.DetailsViewModel
@@ -23,11 +23,11 @@ private val loadFeature by lazy {
 }
 
 val viewModelModule: Module = module {
-    single<EventRepository> { EventRepositoryImpl() }
-    single<CustomButtonRepository> { CustomButtonRepositoryImp() }
+    viewModel { HomeViewModel(get(), get()) }
+    viewModel { DetailsViewModel(get()) }
 }
 
 val repositoryModule: Module = module {
-    viewModel { HomeViewModel(get(), get()) }
-    viewModel { DetailsViewModel(get()) }
+    single<EventRepository> { EventRepositoryImpl() }
+    single<CategoryRepository> { CategoryRepositoryImp() }
 }
