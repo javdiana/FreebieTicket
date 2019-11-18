@@ -47,7 +47,8 @@
                     android:layout_height="@dimen/mainButtonSize"
                     android:background="@drawable/button_background_white"
                     android:src="@drawable/ic_filters"
-                    android:padding="@dimen/paddingImage" />
+                    android:padding="@dimen/paddingImage"
+                    android:layout_marginTop="@dimen/item_spacing_8x"/>
 
             </LinearLayout>
 

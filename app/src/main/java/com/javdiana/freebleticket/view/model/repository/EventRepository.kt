@@ -4,4 +4,6 @@ import com.javdiana.freebleticket.view.model.entity.Event
 
 interface EventRepository {
     fun getEvents(): ArrayList<Event>
+
+    fun getEvent(id:Long) : Event
 }

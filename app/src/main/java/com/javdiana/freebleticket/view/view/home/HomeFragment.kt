@@ -1,5 +1,6 @@
 package com.javdiana.freebleticket.view.view.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.javdiana.freebleticket.R
+import com.javdiana.freebleticket.view.model.entity.Event
+import com.javdiana.freebleticket.view.view.Constants
+import com.javdiana.freebleticket.view.view.details.DetailsActivity
 import com.javdiana.freebleticket.view.view.home.adapter.CustomButtonAdapter
 import com.javdiana.freebleticket.view.view.home.adapter.EventsAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -39,17 +43,23 @@ class HomeFragment : Fragment() {
     private fun initEvents() {
         rvEvents.layoutManager =
             LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        val adapter = EventsAdapter(R.layout.item_event)
+        val adapter = EventsAdapter(R.layout.item_event, detailItem)
         rvEvents.adapter = adapter
         homeViewModel.events.observe(this, Observer {
             adapter.submitList(it)
         })
     }
 
+    private val detailItem:(Event)-> Unit = {
+        val intent = Intent(this.activity, DetailsActivity::class.java)
+        intent.putExtra(Constants.EXTRA_ID, it.id)
+        startActivity(intent)
+    }
+
     private fun initCollections() {
         rvCollections.layoutManager =
             LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        val adapter = EventsAdapter(R.layout.item_collection)
+        val adapter = EventsAdapter(R.layout.item_collection, detailItem)
         rvCollections.adapter = adapter
         homeViewModel.collections.observe(this, Observer {
             adapter.submitList(it)
@@ -65,5 +75,4 @@ class HomeFragment : Fragment() {
             adapter.submitList(it)
         })
     }
-
 }

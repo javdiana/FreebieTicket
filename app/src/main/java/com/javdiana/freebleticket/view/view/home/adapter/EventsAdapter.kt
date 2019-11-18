@@ -7,7 +7,6 @@ import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.javdiana.freebleticket.R
 import com.javdiana.freebleticket.R.id.collectionItem
 import com.javdiana.freebleticket.R.id.eventItem
 import com.javdiana.freebleticket.view.model.entity.Event
@@ -17,11 +16,11 @@ import kotlinx.android.synthetic.main.item_collection.view.*
 import kotlinx.android.synthetic.main.item_event.view.*
 
 
-class EventsAdapter(@LayoutRes private val layout: Int) :
+class EventsAdapter(@LayoutRes private val layout: Int, private val openClick: (Event) -> Unit) :
     ListAdapter<Event, EventHolder>(EventsPostDiffCallback()) {
 
     override fun onBindViewHolder(holder: EventHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), openClick)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventHolder {
@@ -32,7 +31,7 @@ class EventsAdapter(@LayoutRes private val layout: Int) :
 
     class EventHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
-        fun bind(event: Event) {
+        fun bind(event: Event, openClick: (Event) -> Unit) {
             when (itemView.id) {
                 eventItem -> {
                     itemView.imageEvent.clipToOutline = true
@@ -45,13 +44,11 @@ class EventsAdapter(@LayoutRes private val layout: Int) :
                     itemView.imageCollection.clipToOutline = true
                     itemView.titleCollection.text = event.name
                     itemView.typeCollection.text = event.type
-                    itemView.learnMoreCollection.setOnClickListener { learnMore() }
+                    itemView.learnMoreCollection.setOnClickListener { openClick(event) }
                 }
             }
-        }
 
-        private fun learnMore() {
-            //todo
+            itemView.setOnClickListener{openClick(event)}
         }
     }
 }

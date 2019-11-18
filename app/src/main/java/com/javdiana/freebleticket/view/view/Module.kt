@@ -4,6 +4,7 @@ import com.javdiana.freebleticket.view.model.repository.CustomButtonRepository
 import com.javdiana.freebleticket.view.model.repository.CustomButtonRepositoryImp
 import com.javdiana.freebleticket.view.model.repository.EventRepository
 import com.javdiana.freebleticket.view.model.repository.EventRepositoryImpl
+import com.javdiana.freebleticket.view.view.details.DetailsViewModel
 import com.javdiana.freebleticket.view.view.home.HomeViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
@@ -28,4 +29,5 @@ val viewModelModule: Module = module {
 
 val repositoryModule: Module = module {
     viewModel { HomeViewModel(get(), get()) }
+    viewModel { DetailsViewModel(get()) }
 }
