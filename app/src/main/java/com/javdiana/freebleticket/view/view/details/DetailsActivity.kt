@@ -7,6 +7,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.javdiana.freebleticket.R
 import com.javdiana.freebleticket.R.layout
 import com.javdiana.freebleticket.view.extensions.formatToString
@@ -15,6 +16,7 @@ import com.javdiana.freebleticket.view.model.entity.Event
 import com.javdiana.freebleticket.view.view.Constants
 import kotlinx.android.synthetic.main.activity_details.*
 import kotlinx.android.synthetic.main.activity_details.view.*
+import kotlinx.android.synthetic.main.view_more_details_dialog.*
 import kotlinx.android.synthetic.main.view_more_details_sheet.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -63,8 +65,7 @@ class DetailsActivity : AppCompatActivity() {
             tvCostDetails.text = String.format(resources.getString(R.string.show_2_string), event.costLow, event.costHigh)
             tvPlaceDetails.text = event.place
             sourceDetail.text = event.source
-            /*todo
-               detailsDetails.text = event.details
+            /*todo detailsDetails.text = event.details
             updatesDetails.text = event.updates
 
             //frLocationDetails

@@ -9,21 +9,14 @@
     <dimen name="item_spacing_7x">28dp</dimen>
     <dimen name="item_spacing_8x">32dp</dimen>
     <dimen name="item_spacing_12x">48dp</dimen>
-
     <dimen name="linePadding">1dp</dimen>
 
 <!--    text sizes-->
-    <dimen name="textSizeItemEventsRvDate">12sp</dimen>
-    <dimen name="textSizeItemEventsRvCost">12sp</dimen>
-    <dimen name="textSizeItemEventsRvType">12sp</dimen>
-    <dimen name="textSizeItemCustomButtonTitle">12sp</dimen>
-    <dimen name="textSizeToolbarHome">16sp</dimen>
-    <dimen name="textSizeTextViewMainTitles">28sp</dimen>
-    <dimen name="textSizeItemEventsRvTitle">22sp</dimen>
+    <dimen name="text_size_3x">12sp</dimen>
+    <dimen name="text_size_4x">16sp</dimen>
+    <dimen name="text_size_4_5x">18sp</dimen>
+    <dimen name="text_size_5_5x">22sp</dimen>
+    <dimen name="text_size_7x">28sp</dimen>
+    <dimen name="text_size_8x">32sp</dimen>
 
-<!--    view sizes-->
-    <dimen name="buttonCloseSize">28dp</dimen>
-    <dimen name="mainButtonSize">32dp</dimen>
-    <dimen name="paddingImage">8dp</dimen>
-    <dimen name="toolbarHeightHome">64dp</dimen>
 </resources>

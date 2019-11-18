@@ -9,8 +9,8 @@
                     <padding android:top="1dp" />
                     <padding android:left="1dp" />
                     <padding android:right="1dp" />
-                    <size android:height="@dimen/mainButtonSize"
-                        android:width="@dimen/mainButtonSize"/>
+                    <size android:height="@dimen/item_spacing_8x"
+                        android:width="@dimen/item_spacing_8x"/>
 
                 </shape>
             </item>
@@ -18,8 +18,8 @@
                 <shape android:shape="oval">
                     <solid android:color="@color/colorWhite" />
                     <corners android:radius="10dp" />
-                    <size android:height="@dimen/mainButtonSize"
-                        android:width="@dimen/mainButtonSize"/>
+                    <size android:height="@dimen/item_spacing_8x"
+                        android:width="@dimen/item_spacing_8x"/>
 
                 </shape>
             </item>

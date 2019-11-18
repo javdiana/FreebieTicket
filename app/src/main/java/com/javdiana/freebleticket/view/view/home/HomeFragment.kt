@@ -72,10 +72,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun initDiscovers() {
-        rvDiscover.layoutManager =
+        rvCategories.layoutManager =
             LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         val adapter = CustomButtonAdapter()
-        rvDiscover.adapter = adapter
+        rvCategories.adapter = adapter
         homeViewModel.buttons.observe(this, Observer {
             adapter.submitList(it)
         })

@@ -13,7 +13,7 @@
     <string name="organizers">Organizers</string>
     <string name="buy_tickets">Buy tickets</string>
 
-    <string name="show_2_string">"€%S-%S"</string>
+    <string name="show_2_string">"€%S - €%S"</string>
     <string name="content_description">"Content description"</string>
     <string name="tickets_bought_message">"Tickets bought!"</string>
 

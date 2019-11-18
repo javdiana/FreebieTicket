@@ -4,7 +4,6 @@
     android:id="@+id/btnCategoryItem"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="@dimen/item_spacing_2x"
     android:layout_marginEnd="@dimen/item_spacing_2x"
     android:background="@drawable/button_custom"
     android:orientation="horizontal">
@@ -28,6 +27,6 @@
         android:layout_marginStart="@dimen/item_spacing_1x"
         android:layout_marginEnd="@dimen/item_spacing_8x"
         android:fontFamily="@font/work_sans_bold"
-        android:textSize="@dimen/textSizeItemCustomButtonTitle"
+        android:textSize="@dimen/text_size_3x"
         tools:text="You area" />
 </LinearLayout>

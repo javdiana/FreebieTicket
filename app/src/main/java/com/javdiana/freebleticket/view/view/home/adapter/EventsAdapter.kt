@@ -39,10 +39,10 @@ class EventsAdapter(
             when (itemView.id) {
                 eventItem -> {
                     itemView.imageEvent.clipToOutline = true
-                    itemView.textviewDate.text = (event.date).formatToString()
+                    itemView.tvDateEvent.text = (event.date).formatToString().toUpperCase()
                     itemView.textviewFestival.text = event.name
-                    itemView.textviewType.text = event.type
-                    itemView.textviewCost.text = String.format(itemView.resources.getString(R.string.show_2_string), event.costLow, event.costHigh)
+                    itemView.tvTypeEvent.text = event.type
+                    itemView.tvCostEvent.text = String.format(itemView.resources.getString(R.string.show_2_string), event.costLow, event.costHigh)
                     itemView.imageDeleteItem.setOnClickListener { deleteItem(event) }
                 }
                 collectionItem -> {

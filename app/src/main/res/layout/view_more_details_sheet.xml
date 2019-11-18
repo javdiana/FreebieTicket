@@ -33,7 +33,6 @@
 
             <TextView
                 android:id="@+id/titleDetails"
-                style="@style/TextViewStyleWithoutMargins"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/item_spacing_4x"
@@ -65,7 +64,7 @@
                     android:fontFamily="@font/work_sans_medium"
                     tools:text="Date: 28/09/12"
                     android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textSizeToolbarHome" />
+                    android:textSize="@dimen/text_size_4x" />
             </LinearLayout>
 
             <LinearLayout
@@ -91,7 +90,7 @@
                     android:fontFamily="@font/work_sans_medium"
                     tools:text="Location:"
                     android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textSizeToolbarHome" />
+                    android:textSize="@dimen/text_size_4x" />
             </LinearLayout>
 
             <LinearLayout
@@ -117,7 +116,7 @@
                     android:fontFamily="@font/work_sans_medium"
                     tools:text="Type:"
                     android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textSizeToolbarHome" />
+                    android:textSize="@dimen/text_size_4x" />
             </LinearLayout>
 
             <LinearLayout
@@ -132,7 +131,7 @@
                     android:layout_width="@dimen/item_spacing_4x"
                     android:layout_height="@dimen/item_spacing_4x"
                     android:layout_gravity="center_vertical|center_horizontal"
-                    android:src="@drawable/ic_tikets"
+                    android:src="@drawable/ic_tickets"
                     android:contentDescription="@string/content_description"/>
 
                 <TextView
@@ -143,7 +142,7 @@
                     android:fontFamily="@font/work_sans_medium"
                     tools:text="Cost:30$-40$"
                     android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textSizeToolbarHome" />
+                    android:textSize="@dimen/text_size_4x" />
             </LinearLayout>
 
             <LinearLayout
@@ -169,7 +168,7 @@
                     android:fontFamily="@font/work_sans_medium"
                     tools:text="Place:"
                     android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textSizeToolbarHome"
+                    android:textSize="@dimen/text_size_4x"
                     android:layout_marginBottom="@dimen/item_spacing_2x"/>
             </LinearLayout>
 

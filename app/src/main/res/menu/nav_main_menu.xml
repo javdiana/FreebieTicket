@@ -10,7 +10,7 @@
         android:title="" />
     <item
         android:id="@+id/tickets"
-        android:icon="@drawable/ic_tikets"
+        android:icon="@drawable/ic_tickets"
         android:title="" />
     <item
         android:id="@+id/profile"
