@@ -13,6 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/image_background"
+        android:foreground="@drawable/gradient_blue_event"
         android:contentDescription="@string/content_description"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
