@@ -5,10 +5,11 @@ import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
-private const val format = "EEEE MMM, Ha"
-private val sdf = SimpleDateFormat(format, Locale.ENGLISH)
+private const val formatDay = "EEEE"
+private const val formatMontH = " MMM, Ha"
+private val sdf = SimpleDateFormat("$formatDay, $formatMontH", Locale.ENGLISH)
 
-fun String.formatToLong(): Long{
+fun String.formatToLong(): Long {
     return try {
         val d: Date = sdf.parse(this)
         d.time
@@ -18,7 +19,7 @@ fun String.formatToLong(): Long{
     }
 }
 
-fun Long.formatToString(): String{
+fun Long.formatToString(): String {
     val d = Date(this)
     return sdf.format(d)
 }
