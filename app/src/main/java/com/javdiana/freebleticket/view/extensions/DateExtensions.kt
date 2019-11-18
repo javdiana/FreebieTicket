@@ -5,7 +5,7 @@ import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
-private const val format = "EEE MMM, Ha"
+private const val format = "EEEE MMM, Ha"
 private val sdf = SimpleDateFormat(format, Locale.ENGLISH)
 
 fun String.formatToLong(): Long{
