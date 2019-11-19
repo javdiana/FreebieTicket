@@ -16,5 +16,9 @@
     <string name="show_2_string">"€%S - €%S"</string>
     <string name="content_description">"Content description"</string>
     <string name="tickets_bought_message">"Tickets bought!"</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="events">EVENTS MORE</string>
+    <string name="event">EVENT</string>
+    <string name="more"><![CDATA[>]]></string>
 
 </resources>

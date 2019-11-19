@@ -35,21 +35,21 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    style="@style/TextViewTitles"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/for_you"
-                    style="@style/TextViewTitles"/>
+                    android:text="@string/for_you" />
 
                 <ImageView
                     android:id="@+id/buttonSetFilters"
                     android:layout_width="@dimen/item_spacing_8x"
                     android:layout_height="@dimen/item_spacing_8x"
+                    android:layout_marginTop="36dp"
                     android:background="@drawable/button_background_white"
                     android:contentDescription="@string/content_description"
                     android:padding="@dimen/item_spacing_2x"
-                    android:src="@drawable/ic_filters"
-                    android:layout_marginTop="36dp"/>
+                    android:src="@drawable/ic_filters" />
 
             </LinearLayout>
 
@@ -61,10 +61,10 @@
                 android:layout_marginTop="@dimen/item_spacing_4x" />
 
             <TextView
+                style="@style/TextViewTitles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/collections"
-                style="@style/TextViewTitles"/>
+                android:text="@string/collections" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvCollections"
@@ -74,10 +74,10 @@
                 android:layout_marginTop="@dimen/item_spacing_4x" />
 
             <TextView
+                style="@style/TextViewTitles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/discover"
-                style="@style/TextViewTitles"/>
+                android:text="@string/discover" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvCategories"
@@ -88,7 +88,52 @@
                 android:paddingStart="@dimen/item_spacing_2x"
                 tools:ignore="RtlSymmetry" />
 
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/item_spacing_4x"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextViewTitles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/upcoming" />
+
+                <ImageView
+                    android:id="@+id/buttonNext"
+                    android:layout_width="@dimen/item_spacing_8x"
+                    android:layout_height="@dimen/item_spacing_8x"
+                    android:layout_marginTop="36dp"
+                    android:background="@drawable/button_background_white"
+                    android:clickable="true"
+                    android:contentDescription="@string/content_description"
+                    android:focusable="true"
+                    android:padding="@dimen/item_spacing_2x"
+                    android:src="@drawable/ic_next" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/item_spacing_6x"
+                android:layout_marginTop="@dimen/item_spacing_8x"
+                android:fontFamily="@font/work_sans_bold"
+                android:textSize="12sp"
+                android:textColor="@color/colorPink"
+                tools:text="SEP" />
+
+            <LinearLayout
+                android:id="@+id/upcomingEventsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/item_spacing_4x"
+                android:orientation="vertical" />
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

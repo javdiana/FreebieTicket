@@ -6,6 +6,7 @@ import com.javdiana.freebleticket.view.model.entity.Category
 import com.javdiana.freebleticket.view.model.entity.Event
 import com.javdiana.freebleticket.view.model.repository.CategoryRepository
 import com.javdiana.freebleticket.view.model.repository.EventRepository
+import kotlin.collections.ArrayList
 
 class HomeViewModel(
     private val eventRepository: EventRepository,
@@ -14,6 +15,7 @@ class HomeViewModel(
     val events = MutableLiveData<ArrayList<Event>>()
     val collections = MutableLiveData<ArrayList<Event>>()
     val buttons = MutableLiveData<ArrayList<Category>>()
+    val upcomingEvents = MutableLiveData<ArrayList<Event>>()
 
     fun getListEvents() {
         events.postValue(eventRepository.getEvents())
@@ -27,8 +29,12 @@ class HomeViewModel(
         buttons.postValue(categoryRepository.getCategories())
     }
 
-    fun deleteEvent(event:Event) {
+    fun deleteEvent(event: Event) {
         events.value?.remove(event)
         eventRepository.deleteEvent(event)
+    }
+
+    fun getListUpcomingEvents() {
+        upcomingEvents.postValue(eventRepository.getUpcomingEvents())
     }
 }

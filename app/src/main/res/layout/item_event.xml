@@ -28,9 +28,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageEvent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/button_background_grey"
         android:background="@drawable/gradient_blue_event"
-        />
+        android:contentDescription="@string/content_description"/>
 
     <ImageView
         android:id="@+id/imageDeleteItem"
@@ -68,13 +67,13 @@
             tools:text="25/12/19" />
 
         <TextView
-            android:id="@+id/textviewFestival"
+            android:id="@+id/tvEvent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/work_sans_semi_bold"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/text_size_5_5x"
-            tools:text="Festival:" />
+            tools:text="Event:" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -117,8 +116,5 @@
                 tools:text="$40-60" />
         </LinearLayout>
     </LinearLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

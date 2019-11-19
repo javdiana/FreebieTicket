@@ -15,5 +15,5 @@ data class Event(
     val location: Location,
     val performers: List<Performer>,
     val organizers: List<Performer>,
-    val source:String
+    val source: String
 )

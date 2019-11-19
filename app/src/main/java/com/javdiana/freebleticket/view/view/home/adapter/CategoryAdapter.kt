@@ -9,11 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.javdiana.freebleticket.R
 import com.javdiana.freebleticket.view.model.entity.Category
-import com.javdiana.freebleticket.view.view.home.adapter.CustomButtonAdapter.CategoryHolder
+import com.javdiana.freebleticket.view.view.home.adapter.CategoryAdapter.CategoryHolder
 import kotlinx.android.synthetic.main.item_category.view.*
 
-class CustomButtonAdapter :
-    ListAdapter<Category, CategoryHolder>(CategoryPostDiffCallback()) {
+class CategoryAdapter : ListAdapter<Category, CategoryHolder>(CategoryPostDiffCallback()) {
 
     override fun onBindViewHolder(holder: CategoryHolder, position: Int) {
         holder.bind(getItem(position))

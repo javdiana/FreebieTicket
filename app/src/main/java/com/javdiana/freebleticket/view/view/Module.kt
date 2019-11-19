@@ -1,7 +1,7 @@
 package com.javdiana.freebleticket.view.view
 
 import com.javdiana.freebleticket.view.model.repository.CategoryRepository
-import com.javdiana.freebleticket.view.model.repository.CategoryRepositoryImp
+import com.javdiana.freebleticket.view.model.repository.CategoryRepositoryImpl
 import com.javdiana.freebleticket.view.model.repository.EventRepository
 import com.javdiana.freebleticket.view.model.repository.EventRepositoryImpl
 import com.javdiana.freebleticket.view.view.details.DetailsViewModel
@@ -29,5 +29,5 @@ val viewModelModule: Module = module {
 
 val repositoryModule: Module = module {
     single<EventRepository> { EventRepositoryImpl() }
-    single<CategoryRepository> { CategoryRepositoryImp() }
+    single<CategoryRepository> { CategoryRepositoryImpl() }
 }
