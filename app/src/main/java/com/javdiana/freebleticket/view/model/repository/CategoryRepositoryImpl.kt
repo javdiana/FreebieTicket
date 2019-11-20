@@ -14,4 +14,14 @@ class CategoryRepositoryImpl : CategoryRepository {
         )
     }
 
+    override fun getPopularCategories(): ArrayList<Category> {
+        return arrayListOf(
+            Category(0, "Phil Collins", 0, Color.parseColor("#ffffff")),
+            Category(1, "TV on the radio", 0, Color.parseColor("#ffffff")),
+            Category(2, "PC Barcelona", 0, Color.parseColor("#ffffff")),
+            Category(3, "Linkin Park", 0, Color.parseColor("#ffffff")),
+            Category(4, "Morandi", 0, Color.parseColor("#ffffff")),
+            Category(5, "Imagine Dragons", 0, Color.parseColor("#ffffff"))
+        )
+    }
 }

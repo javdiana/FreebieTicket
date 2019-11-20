@@ -1,13 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This fragment tickets"/>
+        android:background="@drawable/tickets_placeholder">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/popular"
+            style="@style/TextViewTitles"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="64dp"
+            android:layout_marginStart="@dimen/item_spacing_4x"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategoriesPopular"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_spacing_8x"
+            android:paddingStart="@dimen/item_spacing_4x"
+            tools:ignore="RtlSymmetry"
+            android:layout_marginTop="@dimen/item_spacing_6x"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_tickets_bought"
+        style="@style/TextViewTitles"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/it_appears_you_haven_t_bought_any_tickets_yet_n_maybe_try_searching_these"
+        android:textSize="@dimen/text_size_4x"
+        android:fontFamily="@font/work_sans_medium"
+        android:gravity="center_horizontal"
+        android:layout_marginStart="@dimen/item_spacing_4x"
+        android:layout_marginEnd="@dimen/item_spacing_4x"/>
 
 </LinearLayout>

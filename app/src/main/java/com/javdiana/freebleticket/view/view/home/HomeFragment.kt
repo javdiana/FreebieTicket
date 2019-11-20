@@ -42,7 +42,7 @@ class HomeFragment : Fragment() {
 
         homeViewModel.getListEvents()
         homeViewModel.getListCollections()
-        homeViewModel.getListButtons()
+        homeViewModel.getListCategories()
 
         initEvents()
         initCollections()
@@ -75,9 +75,9 @@ class HomeFragment : Fragment() {
     private fun initDiscovers() {
         rvCategories.layoutManager =
             LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        val adapter = CategoryAdapter()
+        val adapter = CategoryAdapter(R.layout.item_category_light)
         rvCategories.adapter = adapter
-        homeViewModel.buttons.observe(this, Observer {
+        homeViewModel.categories.observe(this, Observer {
             adapter.submitList(it)
         })
     }

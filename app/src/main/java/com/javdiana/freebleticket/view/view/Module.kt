@@ -6,6 +6,7 @@ import com.javdiana.freebleticket.view.model.repository.EventRepository
 import com.javdiana.freebleticket.view.model.repository.EventRepositoryImpl
 import com.javdiana.freebleticket.view.view.details.DetailsViewModel
 import com.javdiana.freebleticket.view.view.home.HomeViewModel
+import com.javdiana.freebleticket.view.view.tickets.TicketsViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.module.Module
@@ -25,6 +26,7 @@ private val loadFeature by lazy {
 val viewModelModule: Module = module {
     viewModel { HomeViewModel(get(), get()) }
     viewModel { DetailsViewModel(get()) }
+    viewModel { TicketsViewModel(get()) }
 }
 
 val repositoryModule: Module = module {

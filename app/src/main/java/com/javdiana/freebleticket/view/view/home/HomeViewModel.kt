@@ -14,7 +14,7 @@ class HomeViewModel(
 ) : ViewModel() {
     val events = MutableLiveData<ArrayList<Event>>()
     val collections = MutableLiveData<ArrayList<Event>>()
-    val buttons = MutableLiveData<ArrayList<Category>>()
+    val categories = MutableLiveData<ArrayList<Category>>()
     val upcomingEvents = MutableLiveData<ArrayList<Event>>()
 
     fun getListEvents() {
@@ -25,8 +25,8 @@ class HomeViewModel(
         collections.postValue(eventRepository.getEvents())
     }
 
-    fun getListButtons() {
-        buttons.postValue(categoryRepository.getCategories())
+    fun getListCategories() {
+        categories.postValue(categoryRepository.getCategories())
     }
 
     fun deleteEvent(event: Event) {
