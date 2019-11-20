@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/content_description"
             android:scaleType="fitXY"
-            android:src="@drawable/event_poster"
+            android:src="@drawable/poster_place_holder"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +33,7 @@
             android:clickable="true"
             android:contentDescription="@string/content_description"
             android:focusable="true"
-            android:src="@drawable/ic_back"
+            app:srcCompat="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,7 +46,7 @@
             android:clickable="true"
             android:contentDescription="@string/content_description"
             android:focusable="true"
-            android:src="@drawable/ic_heard_with_borders"
+            app:srcCompat="@drawable/ic_heard_with_borders"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,7 +59,7 @@
             android:clickable="true"
             android:contentDescription="@string/content_description"
             android:focusable="true"
-            android:src="@drawable/ic_upload"
+            app:srcCompat="@drawable/ic_upload"
             app:layout_constraintEnd_toStartOf="@+id/imageLikeDetails"
             app:layout_constraintTop_toTopOf="parent" />
 

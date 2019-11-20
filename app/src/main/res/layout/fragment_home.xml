@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -49,7 +50,7 @@
                     android:background="@drawable/button_background_white"
                     android:contentDescription="@string/content_description"
                     android:padding="@dimen/item_spacing_2x"
-                    android:src="@drawable/ic_filters" />
+                    app:srcCompat="@drawable/ic_filters" />
 
             </LinearLayout>
 
@@ -86,6 +87,7 @@
                 android:layout_marginTop="@dimen/item_spacing_4x"
                 android:layout_marginBottom="@dimen/item_spacing_4x"
                 android:paddingStart="@dimen/item_spacing_2x"
+                android:clipToPadding="true"
                 tools:ignore="RtlSymmetry" />
 
 
@@ -112,7 +114,7 @@
                     android:contentDescription="@string/content_description"
                     android:focusable="true"
                     android:padding="@dimen/item_spacing_2x"
-                    android:src="@drawable/ic_next" />
+                    app:srcCompat="@drawable/ic_next" />
             </LinearLayout>
 
             <TextView

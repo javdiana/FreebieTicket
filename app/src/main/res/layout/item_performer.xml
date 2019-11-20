@@ -10,8 +10,7 @@
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:background="@drawable/view_background"
-        android:contentDescription="@string/content_description"
-        android:src="@drawable/organizer_placeholder" />
+        android:contentDescription="@string/content_description" />
 
     <LinearLayout
         android:layout_width="match_parent"

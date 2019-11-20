@@ -31,8 +31,10 @@ class HomeViewModel(
 
     fun deleteEvent(event: Event) {
         events.value?.remove(event)
-        eventRepository.deleteEvent(event)
+        events.postValue(events.value)
+        //eventRepository.deleteEvent(event)
     }
+
 
     fun getListUpcomingEvents() {
         upcomingEvents.postValue(eventRepository.getUpcomingEvents())

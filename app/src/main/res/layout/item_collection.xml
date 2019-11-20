@@ -3,39 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/collectionItem"
-    android:layout_width="match_parent"
+    android:layout_width="320dp"
     android:layout_height="160dp"
     android:layout_marginEnd="16dp"
     android:orientation="vertical">
 
-    <ImageView
+    <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/imageCollection"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/image_background"
-        android:foreground="@drawable/gradient_blue_event"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:contentDescription="@string/content_description"
         android:scaleType="centerCrop"
+        android:src="@drawable/collection_placeholder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="10dp"
         app:srcCompat="@drawable/collection_placeholder" />
+
+
+    <!--    android:foreground="@drawable/gradient_blue_event" add gradient-->
 
     <TextView
         android:id="@+id/titleCollection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_spacing_4x"
         android:layout_marginTop="@dimen/item_spacing_4x"
         android:layout_marginEnd="@dimen/item_spacing_4x"
-        android:layout_marginStart="@dimen/item_spacing_4x"
+        android:fontFamily="@font/work_sans_semi_bold"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/text_size_5_5x"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Title"
-        android:fontFamily="@font/work_sans_semi_bold"
-        android:textColor="@color/colorWhite"
-        android:textSize="@dimen/text_size_5_5x"/>
+        tools:text="Title" />
 
 
     <LinearLayout
@@ -55,15 +58,15 @@
             android:layout_height="10dp"
             android:layout_gravity="center_vertical|center_horizontal"
             android:contentDescription="@string/content_description"
-            android:src="@drawable/ic_note_grey"/>
+            app:srcCompat="@drawable/ic_note_grey" />
 
         <TextView
             android:id="@+id/typeCollection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:textColor="@color/colorWhite"
             android:fontFamily="@font/work_sans_semi_bold"
+            android:textColor="@color/colorWhite"
             android:textSize="12sp"
             tools:text="Type" />
 
@@ -77,9 +80,9 @@
         android:layout_marginStart="@dimen/item_spacing_4x"
         android:layout_marginEnd="@dimen/item_spacing_4x"
         android:layout_marginBottom="16dp"
-        android:fontFamily="@font/work_sans_semi_bold"
         android:clickable="true"
         android:focusable="true"
+        android:fontFamily="@font/work_sans_semi_bold"
         android:text="@string/learn_more"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"

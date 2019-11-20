@@ -19,6 +19,7 @@ class UpcomingEventView(context: Context?) : LinearLayout(context) {
     fun createView(event: Event, deleteItem: (Event) -> Unit, sizeItems: Int) {
         imageEventUpcoming.clipToOutline = true
         imageMoreUpcoming.clipToOutline = true
+
         imageDeleteItemUpcoming.setOnClickListener { deleteItem(event) }
         tvEventUpcoming.text = event.name
         tvTypeEventUpcoming.text = event.type

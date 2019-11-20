@@ -29,6 +29,7 @@ class HomeFragment : Fragment() {
 
     private val deleteItem: (Event) -> Unit = {
         homeViewModel.deleteEvent(it)
+        //homeViewModel.getListEvents()
     }
 
     private val adapterEvent = EventsAdapter(R.layout.item_event, detailItem, deleteItem)

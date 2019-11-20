@@ -28,9 +28,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/work_sans_semi_bold"
-                android:text="@dimen/text_size_3x"
+                tools:text="12"
                 android:textColor="#222834"
-                android:textSize="@dimen/item_spacing_5x" />
+                android:textSize="@dimen/text_size_5x" />
 
             <TextView
                 android:id="@+id/tvDayOfWeek"
@@ -45,7 +45,8 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/content_description"/>
         <!--        set circles-->
     </LinearLayout>
 
@@ -62,18 +63,18 @@
             android:layout_marginEnd="@dimen/item_spacing_4x"
             android:orientation="vertical">
 
-            <ImageView
+            <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/imageEventUpcoming"
                 android:layout_width="match_parent"
                 android:layout_height="172dp"
-                android:background="@drawable/image_background"
                 android:contentDescription="@string/content_description"
                 android:scaleType="centerCrop"
                 android:src="@drawable/upcoming_placeholder"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius="10dp"/>
 
             <ImageView
                 android:id="@+id/imageView"
@@ -96,7 +97,7 @@
                 android:contentDescription="@string/content_description"
                 android:focusable="true"
                 android:padding="10dp"
-                android:src="@drawable/ic_close"
+                app:srcCompat="@drawable/ic_close"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -135,7 +136,7 @@
                         android:layout_gravity="center_vertical|center_horizontal"
                         android:contentDescription="@string/content_description"
                         android:padding="@dimen/item_spacing_1x"
-                        android:src="@drawable/ic_note" />
+                        app:srcCompat="@drawable/ic_note" />
 
                     <TextView
                         android:id="@+id/tvTypeEventUpcoming"
@@ -151,7 +152,7 @@
                         android:layout_marginStart="10dp"
                         android:contentDescription="@string/content_description"
                         android:padding="@dimen/item_spacing_1x"
-                        android:src="@drawable/ic_tickets" />
+                        app:srcCompat="@drawable/ic_tickets" />
 
                     <TextView
                         android:id="@+id/tvCostEventUpcoming"
@@ -170,16 +171,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/item_spacing_6x">
 
-            <ImageView
+            <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/imageMoreUpcoming"
                 android:layout_width="288dp"
                 android:layout_height="40dp"
-                android:background="@drawable/image_background"
                 android:src="@drawable/upcoming_button"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/content_description"
+                app:riv_corner_radius="10dp"/>
 
             <TextView
                 android:id="@+id/tvNumberOfEventUpcoming"

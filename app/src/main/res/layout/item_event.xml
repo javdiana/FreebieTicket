@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/eventItem"
-    android:layout_width="match_parent"
+    android:layout_width="320dp"
     android:layout_height="256dp"
     android:layout_marginEnd="@dimen/item_spacing_4x"
     android:orientation="vertical">
 
-    <ImageView
+    <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/imageEvent"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/image_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:contentDescription="@string/content_description"
         android:scaleType="centerCrop"
         android:src="@drawable/event_placeholder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="10dp" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="172dp"
+        android:background="@drawable/gradient_blue_event"
+        android:contentDescription="@string/content_description"
         app:layout_constraintBottom_toBottomOf="@+id/imageEvent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/gradient_blue_event"
-        android:contentDescription="@string/content_description"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageDeleteItem"
@@ -42,9 +42,9 @@
         android:contentDescription="@string/content_description"
         android:focusable="true"
         android:padding="10dp"
-        android:src="@drawable/ic_close"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -90,13 +90,13 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:contentDescription="@string/content_description"
                 android:padding="@dimen/item_spacing_1x"
-                android:src="@drawable/ic_note" />
+                app:srcCompat="@drawable/ic_note" />
 
             <TextView
                 android:id="@+id/tvTypeEvent"
+                style="@style/TextViewTypeAndCost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/TextViewTypeAndCost"
                 tools:text="Type:" />
 
             <ImageView
@@ -106,13 +106,13 @@
                 android:layout_marginStart="10dp"
                 android:contentDescription="@string/content_description"
                 android:padding="@dimen/item_spacing_1x"
-                android:src="@drawable/ic_tickets" />
+                app:srcCompat="@drawable/ic_tickets" />
 
             <TextView
                 android:id="@+id/tvCostEvent"
+                style="@style/TextViewTypeAndCost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/TextViewTypeAndCost"
                 tools:text="$40-60" />
         </LinearLayout>
     </LinearLayout>

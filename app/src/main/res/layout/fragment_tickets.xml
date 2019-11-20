@@ -27,7 +27,8 @@
             android:layout_height="@dimen/item_spacing_8x"
             android:paddingStart="@dimen/item_spacing_4x"
             tools:ignore="RtlSymmetry"
-            android:layout_marginTop="@dimen/item_spacing_6x"/>
+            android:layout_marginTop="@dimen/item_spacing_6x"
+            android:clipToPadding="true"/>
     </LinearLayout>
 
     <TextView
