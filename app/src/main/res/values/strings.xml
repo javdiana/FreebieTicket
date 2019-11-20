@@ -4,4 +4,24 @@
     <string name="for_you">For you</string>
     <string name="collections">Collections</string>
     <string name="discover">Discover</string>
+
+    <string name="learn_more"><![CDATA[Learn More >]]></string>
+    <string name="details">Details</string>
+    <string name="updates">Updates</string>
+    <string name="location">Location</string>
+    <string name="performers">Performers</string>
+    <string name="organizers">Organizers</string>
+    <string name="buy_tickets">Buy tickets</string>
+
+    <string name="show_2_string">"€%S - €%S"</string>
+    <string name="content_description">"Content description"</string>
+    <string name="tickets_bought_message">"Tickets bought!"</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="events">EVENTS MORE</string>
+    <string name="event">EVENT</string>
+    <string name="more"><![CDATA[>]]></string>
+    <string name="no_tickets_bought">No tickets bought</string>
+    <string name="it_appears_you_haven_t_bought_any_tickets_yet_n_maybe_try_searching_these">It appears you haven’t bought any tickets yet.   Maybe try searching these?</string>
+    <string name="popular">Popular</string>
+
 </resources>

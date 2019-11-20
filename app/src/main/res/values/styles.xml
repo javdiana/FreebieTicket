@@ -9,22 +9,19 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
-    <style name="TextViewStyleParagraphs">
-        <item name="android:textSize">@dimen/textSizeTextViewMainTitles</item>
+    <style name="TextViewTitles">
         <item name="android:fontFamily">@font/work_sans_bold</item>
-        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:textColor">@color/colorTitle</item>
+        <item name="android:layout_marginStart">@dimen/item_spacing_4x</item>
+        <item name="android:textSize">@dimen/item_spacing_7x</item>
+        <item name="android:layout_marginTop">@dimen/item_spacing_8x</item>
     </style>
 
-    <style name="TextViewStyleWithoutMargins">
-        <item name="android:textSize">@dimen/textSizeTextViewMainTitles</item>
-        <item name="android:fontFamily">@font/work_sans_bold</item>
-    </style>
-
-    <style name="TextViewStyleItemRecycler">
-        <item name="android:textSize">@dimen/textSizeItemEventsRvDate</item>
-        <item name="android:fontFamily">@font/work_sans_bold</item>
-        <item name="android:layout_marginStart">6dp</item>
+    <style name="TextViewTypeAndCost">
+        <item name="android:fontFamily">@font/work_sans_semi_bold</item>
+        <item name="android:padding">@dimen/item_spacing_1x</item>
         <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/text_size_3x</item>
     </style>
 
 </resources>

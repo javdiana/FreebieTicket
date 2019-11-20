@@ -5,12 +5,12 @@ import com.javdiana.freebleticket.view.view.injectFeature
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
-class AppConfigKoin : Application() {
+class FreebleApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        startKoin{
-            androidContext(this@AppConfigKoin)
+        startKoin {
+            androidContext(this@FreebleApp)
         }
 
         injectFeature()

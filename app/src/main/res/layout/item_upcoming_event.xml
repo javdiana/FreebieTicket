@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/upcomingEventItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/item_spacing_4x"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/item_spacing_4x"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="56dp"
+            android:layout_margin="@dimen/item_spacing_4x"
+            android:background="@drawable/date_background"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvDayOfMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/work_sans_semi_bold"
+                tools:text="12"
+                android:textColor="#222834"
+                android:textSize="@dimen/text_size_5x" />
+
+            <TextView
+                android:id="@+id/tvDayOfWeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/work_sans_bold"
+                tools:text="THU"
+                android:textColor="#c1c1c1"
+                android:textSize="@dimen/text_size_2_5x" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/content_description"/>
+        <!--        set circles-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/eventItem"
+            android:layout_width="288dp"
+            android:layout_height="172dp"
+            android:layout_marginTop="@dimen/item_spacing_4x"
+            android:layout_marginEnd="@dimen/item_spacing_4x"
+            android:orientation="vertical">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imageEventUpcoming"
+                android:layout_width="match_parent"
+                android:layout_height="172dp"
+                android:contentDescription="@string/content_description"
+                android:scaleType="centerCrop"
+                android:src="@drawable/upcoming_placeholder"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius="10dp"/>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="136dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageEventUpcoming"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/gradient_blue_upcoming_event"
+                android:contentDescription="@string/content_description"/>
+
+            <ImageView
+                android:id="@+id/imageDeleteItemUpcoming"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="@dimen/item_spacing_2x"
+                android:layout_marginEnd="@dimen/item_spacing_2x"
+                android:background="@drawable/button_background_grey_dark"
+                android:clickable="true"
+                android:contentDescription="@string/content_description"
+                android:focusable="true"
+                android:padding="10dp"
+                app:srcCompat="@drawable/ic_close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/item_spacing_4x"
+                android:gravity="bottom"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/tvEventUpcoming"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/work_sans_semi_bold"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/text_size_5_5x"
+                    tools:text="Event:" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/item_spacing_4x"
+                    android:alpha="0.7"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="@dimen/item_spacing_4x"
+                        android:layout_height="@dimen/item_spacing_4x"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:contentDescription="@string/content_description"
+                        android:padding="@dimen/item_spacing_1x"
+                        app:srcCompat="@drawable/ic_note" />
+
+                    <TextView
+                        android:id="@+id/tvTypeEventUpcoming"
+                        style="@style/TextViewTypeAndCost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Type:" />
+
+                    <ImageView
+                        android:layout_width="@dimen/item_spacing_4x"
+                        android:layout_height="@dimen/item_spacing_4x"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="@string/content_description"
+                        android:padding="@dimen/item_spacing_1x"
+                        app:srcCompat="@drawable/ic_tickets" />
+
+                    <TextView
+                        android:id="@+id/tvCostEventUpcoming"
+                        style="@style/TextViewTypeAndCost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="$40-60" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_spacing_6x">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imageMoreUpcoming"
+                android:layout_width="288dp"
+                android:layout_height="40dp"
+                android:src="@drawable/upcoming_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/content_description"
+                app:riv_corner_radius="10dp"/>
+
+            <TextView
+                android:id="@+id/tvNumberOfEventUpcoming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/item_spacing_5x"
+                android:fontFamily="@font/work_sans_extra_bold"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_size_3x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="3 EVENTS MORE" />
+
+            <TextView
+                android:id="@+id/tvShowAllEvents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/work_sans_extra_bold"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_size_3x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/imageMoreUpcoming"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/more"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginEnd="@dimen/item_spacing_4x"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</LinearLayout>
