@@ -1,10 +1,10 @@
 package com.javdiana.freebleticket.view.model.repository
 
+import com.google.android.gms.maps.model.LatLng
+import com.javdiana.freebleticket.R
+import com.javdiana.freebleticket.R.drawable.*
 import com.javdiana.freebleticket.view.extensions.formatToLong
-import com.javdiana.freebleticket.view.model.entity.Event
-import com.javdiana.freebleticket.view.model.entity.Location
-import com.javdiana.freebleticket.view.model.entity.Performer
-import com.javdiana.freebleticket.view.model.entity.Role
+import com.javdiana.freebleticket.view.model.entity.*
 
 class EventRepositoryImpl : EventRepository {
 
@@ -69,17 +69,26 @@ class EventRepositoryImpl : EventRepository {
             Event(
                 0, "Event 1", ("SUNDAY NOVEMBER 6, 3PM").formatToLong(), "Indle rock",
                 40, 60, "", "Flora club", details, updates, "",
-                Location(0, 0), performers, organizers, "radio NV"
-            ),
+                LatLng(0.055551, 0.055551), performers, organizers, "radio NV", TypeCategory.MUSIC),
             Event(
                 1, "Event 2", ("WEDNESDAY SEPTEMBER 11, 7PM").formatToLong(), "Pop music",
                 60, 80, "", "Bartka club", details, updates, "",
-                Location(1, 1), performers, organizers, "radio NV"
+                LatLng(10.055551, 10.055551), performers, organizers, "radio NV", TypeCategory.SPORT
             ),
             Event(
                 2, "Event 3", ("FRIDAY SEPTEMBER 11, 7PM").formatToLong(), "Rock music",
                 50, 70, "", "Rosha club", details, updates, "",
-                Location(2, 2), performers, organizers, "radio NV"
+                LatLng(20.055551, 20.055551), performers, organizers, "radio NV", TypeCategory.MUSIC
+            ),
+            Event(
+                3, "Event 4", ("TUESDAY NOVEMBER 20, 9PM").formatToLong(), "Rock music",
+                50, 70, "", "Goyra club", "", "", "",
+                LatLng(30.055551, 30.055551), listOf(), listOf(), "radio NV", TypeCategory.SPORT
+            ),
+            Event(
+                4, "Event 5", ("TUESDAY NOVEMBER 21, 9PM").formatToLong(), "Rock music",
+                50, 70, "", "Dolche club", "", "", "",
+                LatLng(48.290988, 25.932637), listOf(), listOf(), "radio NV", TypeCategory.MUSIC
             )
         )
         return events
@@ -90,12 +99,12 @@ class EventRepositoryImpl : EventRepository {
             Event(
                 3, "Event 4", ("TUESDAY NOVEMBER 20, 9PM").formatToLong(), "Rock music",
                 50, 70, "", "Goyra club", "", "", "",
-                Location(2, 2), listOf(), listOf(), "radio NV"
+                LatLng(30.0, 30.0), listOf(), listOf(), "radio NV", TypeCategory.SPORT
             ),
             Event(
                 4, "Event 5", ("TUESDAY NOVEMBER 21, 9PM").formatToLong(), "Rock music",
                 50, 70, "", "Dolche club", "", "", "",
-                Location(2, 2), listOf(), listOf(), "radio NV"
+                LatLng(40.0, 40.0), listOf(), listOf(), "radio NV", TypeCategory.MUSIC
             )
         )
         return upcomingEvents

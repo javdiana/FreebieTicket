@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.javdiana.freebleticket.R
-import com.javdiana.freebleticket.view.view.home.adapter.CategoryAdapter
+import com.javdiana.freebleticket.view.view.adapter.CategoryAdapter
 import kotlinx.android.synthetic.main.fragment_tickets.*
 import org.koin.android.viewmodel.ext.android.viewModel
 

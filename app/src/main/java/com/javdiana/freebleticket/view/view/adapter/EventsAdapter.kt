@@ -1,4 +1,4 @@
-package com.javdiana.freebleticket.view.view.home.adapter
+package com.javdiana.freebleticket.view.view.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -40,10 +40,10 @@ class EventsAdapter(
     class EventHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(event: Event, detailItem: (Event) -> Unit, deleteItem: (Event) -> Unit) {
-            itemView.imageEvent.clipToOutline = true
+//            itemView.imageEvent.clipToOutline = true
             itemView.tvDateEvent.text = event.date.formatToString().toUpperCase()
             itemView.tvEvent.text = event.name
-            itemView.tvTypeEvent.text = event.type
+            itemView.tvTypeEvent.text = event.typeMusic
             itemView.tvCostEvent.text = String.format(
                 itemView.resources.getString(R.string.show_2_string),
                 event.costLow,
@@ -57,9 +57,9 @@ class EventsAdapter(
     class CollectionHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(event: Event, detailItem: (Event) -> Unit) {
-            itemView.imageCollection.clipToOutline = true
+//            itemView.imageCollection.clipToOutline = true
             itemView.titleCollection.text = event.name
-            itemView.typeCollection.text = event.type
+            itemView.typeCollection.text = event.typeMusic
             itemView.learnMoreCollection.setOnClickListener { detailItem(event) }
             itemView.setOnClickListener { detailItem(event) }
         }

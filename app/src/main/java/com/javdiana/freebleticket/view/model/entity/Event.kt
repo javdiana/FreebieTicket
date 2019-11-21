@@ -1,10 +1,12 @@
 package com.javdiana.freebleticket.view.model.entity
 
+import com.google.android.gms.maps.model.LatLng
+
 data class Event(
     val id: Long,
     val name: String,
     val date: Long,
-    val type: String,
+    val typeMusic: String,
     val costLow: Int,
     val costHigh: Int,
     val imageEvent: String,
@@ -12,8 +14,9 @@ data class Event(
     val details: String,
     val updates: String,
     val imagePoster: String,
-    val location: Location,
+    val location: LatLng,
     val performers: List<Performer>,
     val organizers: List<Performer>,
-    val source: String
+    val source: String,
+    val typeCategory: TypeCategory
 )

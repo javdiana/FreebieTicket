@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import com.javdiana.freebleticket.R
 import com.javdiana.freebleticket.R.layout
@@ -23,6 +24,9 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layout.activity_details)
+
+        //tbShowDetails?.let { setSupportActionBar(it) }
+        collapsingToolbar.title = getString(R.string.app_name)
 
         initStatusBar()
         initEvent()
@@ -60,7 +64,7 @@ class DetailsActivity : AppCompatActivity() {
             titleDetails.text = event.name
             tvDateDetails.text = (event.date).formatToString()
             tvLocationDetails.text = event.place
-            tvTypeDetails.text = event.type
+//            tvTypeDetails.text = event.type
             tvCostDetails.text = String.format(
                 resources.getString(R.string.show_2_string),
                 event.costLow,

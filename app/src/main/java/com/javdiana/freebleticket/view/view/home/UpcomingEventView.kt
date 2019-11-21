@@ -22,7 +22,7 @@ class UpcomingEventView(context: Context?) : LinearLayout(context) {
 
         imageDeleteItemUpcoming.setOnClickListener { deleteItem(event) }
         tvEventUpcoming.text = event.name
-        tvTypeEventUpcoming.text = event.type
+        tvTypeEventUpcoming.text = event.typeMusic
         tvCostEventUpcoming.text = String.format(
             context.resources.getString(R.string.show_2_string),
             event.costLow,
