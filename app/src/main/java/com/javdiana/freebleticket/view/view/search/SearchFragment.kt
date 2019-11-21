@@ -36,6 +36,7 @@ class SearchFragment : Fragment(), OnMapReadyCallback {
 
     private val showMarkerPosition: (Event) ->  Unit  = {
         setMarkerEvent(it)
+        map?.moveCamera(CameraUpdateFactory.newLatLngZoom(it.location, 16f))
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

@@ -1,5 +1,6 @@
 package com.javdiana.freebleticket.view.view.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.javdiana.freebleticket.view.extensions.getMonth
 import com.javdiana.freebleticket.view.model.entity.Event
 import com.javdiana.freebleticket.view.view.adapter.EventsAdapter
 import com.javdiana.freebleticket.view.view.adapter.CategoryAdapter
+import com.javdiana.freebleticket.view.view.details.DetailsActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -20,9 +22,9 @@ class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModel()
 
     private val detailItem: (Event) -> Unit = {
-//        startActivity(Intent(activity, DetailsActivity::class.java).apply {
-//            putExtra(DetailsActivity.EVENT_ID, it.id)
-//        })
+        startActivity(Intent(activity, DetailsActivity::class.java).apply {
+            putExtra(DetailsActivity.EVENT_ID, it.id)
+        })
     }
 
     private val deleteItem: (Event) -> Unit = {

@@ -7,6 +7,8 @@ import com.javdiana.freebleticket.R
 import com.javdiana.freebleticket.view.extensions.getDayOfMonth
 import com.javdiana.freebleticket.view.extensions.getDayOfWeek
 import com.javdiana.freebleticket.view.model.entity.Event
+import kotlinx.android.synthetic.main.item_size_upcomings.view.*
+import kotlinx.android.synthetic.main.item_upcoming.view.*
 import kotlinx.android.synthetic.main.item_upcoming_event.view.*
 
 class UpcomingEventView(context: Context?) : LinearLayout(context) {
@@ -17,10 +19,7 @@ class UpcomingEventView(context: Context?) : LinearLayout(context) {
     }
 
     fun createView(event: Event, deleteItem: (Event) -> Unit, sizeItems: Int) {
-        imageEventUpcoming.clipToOutline = true
-        imageMoreUpcoming.clipToOutline = true
-
-        imageDeleteItemUpcoming.setOnClickListener { deleteItem(event) }
+//        imageDeleteItemUpcoming.setOnClickListener { deleteItem(event) }
         tvEventUpcoming.text = event.name
         tvTypeEventUpcoming.text = event.typeMusic
         tvCostEventUpcoming.text = String.format(

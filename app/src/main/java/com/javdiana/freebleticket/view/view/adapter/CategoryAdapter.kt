@@ -61,7 +61,9 @@ class CategoryAdapter(
 
         fun bind(category: Category, showMarkerPosition: (Event) ->  Unit) {
             itemView.btnTitleCategory.text = category.title
+//            itemView.setOnClickListener { showMarkerPosition() }
         }
+
     }
 }
 
