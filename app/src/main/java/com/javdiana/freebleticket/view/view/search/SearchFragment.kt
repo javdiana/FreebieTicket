@@ -38,9 +38,7 @@ class SearchFragment : Fragment(), OnMapReadyCallback {
         setMarkerEvent(it)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         searchViewModel.getEvents()
         searchViewModel.getCategories()
 
@@ -52,8 +50,7 @@ class SearchFragment : Fragment(), OnMapReadyCallback {
 
         initCategories()
 
-        val mapFragment =
-            childFragmentManager.findFragmentById(R.id.mapCategory) as SupportMapFragment
+        val mapFragment =childFragmentManager.findFragmentById(R.id.mapCategory) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
         initViews()
