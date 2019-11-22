@@ -36,10 +36,10 @@ class ConfigMap(
 
          val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
-         val isGpsActive = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
-         val hasNetworks = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
-
-         if (isGpsActive && hasNetworks) {
+//         val isGpsActive = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
+//         val hasNetworks = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+//
+//         if (isGpsActive && hasNetworks) {
              map?.let {
                  it.uiSettings.isCompassEnabled = true
                  it.isIndoorEnabled = true
@@ -57,9 +57,9 @@ class ConfigMap(
 
                  map?.moveCamera(CameraUpdateFactory.newLatLngZoom(it.last().location, 16f))
              }
-         } else{
-             showMessage()
-         }
+//         } else{
+//             showMessage()
+//         }
      }
 
     fun setMarkerEvent(event: Event){
