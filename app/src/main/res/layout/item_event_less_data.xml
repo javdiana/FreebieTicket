@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/eventItem"
-    android:layout_width="320dp"
-    android:layout_height="256dp"
+    android:layout_width="288dp"
+    android:layout_height="172dp"
     android:layout_marginEnd="@dimen/item_spacing_4x"
     android:orientation="vertical">
 
     <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/imageEvent"
+        android:id="@+id/imageEventLess"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/content_description"
         android:scaleType="centerCrop"
-        android:src="@drawable/event_placeholder"
+        android:src="@drawable/collection_placeholder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,27 +24,13 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
-        android:layout_height="172dp"
-        android:background="@drawable/gradient_blue_event"
+        android:layout_height="136dp"
+        android:background="@drawable/gradient_blue_event_less_data"
         android:contentDescription="@string/content_description"
-        app:layout_constraintBottom_toBottomOf="@+id/imageEvent"
+        app:layout_constraintBottom_toBottomOf="@+id/imageEventLess"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageDeleteItem"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="@dimen/item_spacing_2x"
-        android:layout_marginEnd="@dimen/item_spacing_2x"
-        android:background="@drawable/button_background_grey"
-        android:clickable="true"
-        android:contentDescription="@string/content_description"
-        android:focusable="true"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_close" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -58,16 +44,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/tvDateEvent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/work_sans_semi_bold"
-            android:textColor="@color/colorWhite"
-            android:textSize="12sp"
-            tools:text="25/12/19" />
-
-        <TextView
-            android:id="@+id/tvEvent"
+            android:id="@+id/tvEventLess"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/work_sans_semi_bold"
@@ -93,7 +70,7 @@
                 app:srcCompat="@drawable/ic_note" />
 
             <TextView
-                android:id="@+id/tvTypeEvent"
+                android:id="@+id/tvTypeEventLess"
                 style="@style/TextViewTypeAndCost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -109,7 +86,7 @@
                 app:srcCompat="@drawable/ic_tickets" />
 
             <TextView
-                android:id="@+id/tvCostEvent"
+                android:id="@+id/tvCostEventLess"
                 style="@style/TextViewTypeAndCost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -1,10 +1,10 @@
 package com.javdiana.freebleticket.view.view
 
-import android.Manifest
+import  android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
-import androidx.core.app.ActivityCompat
+import android.location.LocationManager
 import androidx.core.content.ContextCompat
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -19,10 +19,11 @@ import com.javdiana.freebleticket.R
 import com.javdiana.freebleticket.view.model.entity.Event
 import com.javdiana.freebleticket.view.model.entity.TypeCategory
 
-class AbstractLocation(
+class ConfigMap(
     private val context: Context,
-    private val mapFragment: SupportMapFragment,
-    private val events: ArrayList<Event>
+    mapFragment: SupportMapFragment,
+    private val events: ArrayList<Event>,
+    private val showMessage: () -> Unit
 ): OnMapReadyCallback {
     private var map: GoogleMap? = null
 
@@ -33,13 +34,19 @@ class AbstractLocation(
      override fun onMapReady(googleMap: GoogleMap?) {
          map = googleMap
 
-         map?.let {
-             it.uiSettings.isCompassEnabled = true
-             it.isIndoorEnabled = true
-             it.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.map_style))
-         }
+         val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
-         events.let {
+         val isGpsActive = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
+         val hasNetworks = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+
+         if (isGpsActive && hasNetworks) {
+             map?.let {
+                 it.uiSettings.isCompassEnabled = true
+                 it.isIndoorEnabled = true
+                 it.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.map_style))
+             }
+
+             events.let {
                  it.filter { event -> event.typeCategory == TypeCategory.MUSIC }.map { e ->
                      setMarkerEvent(e)
                  }
@@ -50,7 +57,10 @@ class AbstractLocation(
 
                  map?.moveCamera(CameraUpdateFactory.newLatLngZoom(it.last().location, 16f))
              }
+         } else{
+             showMessage()
          }
+     }
 
     fun setMarkerEvent(event: Event){
         map?.addMarker(
@@ -80,7 +90,7 @@ class AbstractLocation(
             setPermissionsLocation()
         }
     }
-    fun moveCamera(coordinates: Location) {
+    private fun moveCamera(coordinates: Location) {
         val location = LatLng(coordinates.latitude, coordinates.longitude)
         map?.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 16f))
     }

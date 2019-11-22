@@ -2,11 +2,12 @@ package com.javdiana.freebleticket.view.view.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.javdiana.freebleticket.view.extensions.getNextDateToLong
 import com.javdiana.freebleticket.view.model.entity.Category
 import com.javdiana.freebleticket.view.model.entity.Event
 import com.javdiana.freebleticket.view.model.repository.CategoryRepository
 import com.javdiana.freebleticket.view.model.repository.EventRepository
-import kotlin.collections.ArrayList
+import java.util.*
 
 class HomeViewModel(
     private val eventRepository: EventRepository,
@@ -30,13 +31,19 @@ class HomeViewModel(
     }
 
     fun deleteEvent(event: Event) {
-        events.value?.remove(event)
-        events.postValue(events.value)
-        //eventRepository.deleteEvent(event)
+        val ev = events.value
+        ev?.remove(event)
+        eventRepository.deleteEvent(event)
+        events.value = ev
     }
 
 
     fun getListUpcomingEvents() {
+
         upcomingEvents.postValue(eventRepository.getUpcomingEvents())
+        upcomingEvents.value?.let {
+            it.filter { event -> event.date < 1.getNextDateToLong() && event.date > 3.getNextDateToLong() }
+                .map { e -> upcomingEvents.value?.remove(e) }
+        }
     }
 }

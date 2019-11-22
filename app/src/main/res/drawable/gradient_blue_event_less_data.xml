@@ -4,14 +4,14 @@
         <layer-list>
             <item>
                 <shape>
-                    <gradient android:angle="90" android:endColor="#0100041C" android:startColor="#000000" />
+                    <gradient android:angle="90" android:endColor="#010270D6" android:startColor="#00002166" />
 
                     <corners android:radius="10dp" />
                 </shape>
             </item>
             <item>
                 <shape>
-                    <gradient android:angle="90" android:endColor="#014B97CE" android:startColor="#64003995" />
+                    <gradient android:angle="90" android:endColor="#01000000" android:startColor="#0051FF" />
 
                     <corners android:radius="10dp" />
                 </shape>

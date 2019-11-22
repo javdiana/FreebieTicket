@@ -1,4 +1,4 @@
-package com.javdiana.freebleticket.view.view.search
+package com.javdiana.freebleticket.view.view.map
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -7,7 +7,7 @@ import com.javdiana.freebleticket.view.model.entity.Event
 import com.javdiana.freebleticket.view.model.repository.CategoryRepository
 import com.javdiana.freebleticket.view.model.repository.EventRepository
 
-class SearchViewModel(
+class MapViewModel(
     private val eventRepository: EventRepository,
     private val categoryRepository: CategoryRepository
 ) : ViewModel() {

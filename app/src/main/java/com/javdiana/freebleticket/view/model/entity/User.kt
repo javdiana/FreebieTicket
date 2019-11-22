@@ -1,6 +1,6 @@
 package com.javdiana.freebleticket.view.model.entity
 
-data class Performer(
+data class User(
     val id: Long,
     val name: String,
     val photo: String,
