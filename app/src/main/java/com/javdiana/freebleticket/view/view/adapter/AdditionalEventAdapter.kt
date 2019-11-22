@@ -27,7 +27,6 @@ class AdditionalEventAdapter(
     class AdditionalEventHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(event: Event) {
-//            itemView.imageEvent.clipToOutline = true
             itemView.tvEventLess.text = event.name
             itemView.tvTypeEventLess.text = event.typeMusic
             itemView.tvCostEventLess.text = String.format(

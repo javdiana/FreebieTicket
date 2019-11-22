@@ -13,7 +13,7 @@ class DetailsViewModel(private val eventRepository: EventRepository) : ViewModel
         event.postValue(eventRepository.getEvent(id))
     }
 
-    fun getAdditionallEvents() {
+    fun getAdditionalEvents() {
         additionalEvents.postValue(eventRepository.getEvents())
     }
 }

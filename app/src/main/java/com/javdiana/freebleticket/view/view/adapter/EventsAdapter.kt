@@ -40,7 +40,6 @@ class EventsAdapter(
     class EventHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(event: Event, detailItem: (Event) -> Unit, deleteItem: (Event) -> Unit) {
-//            itemView.imageEvent.clipToOutline = true
             itemView.tvDateEvent.text = event.date.formatToString().toUpperCase()
             itemView.tvEvent.text = event.name
             itemView.tvTypeEvent.text = event.typeMusic
@@ -57,7 +56,6 @@ class EventsAdapter(
     class CollectionHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(event: Event, detailItem: (Event) -> Unit) {
-//            itemView.imageCollection.clipToOutline = true
             itemView.titleCollection.text = event.name
             itemView.typeCollection.text = event.typeMusic
             itemView.learnMoreCollection.setOnClickListener { detailItem(event) }

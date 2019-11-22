@@ -42,7 +42,7 @@ class DetailsActivity : AppCompatActivity() {
         initStatusBar()
         initEvent()
 
-        detailsViewModel.getAdditionallEvents()
+        detailsViewModel.getAdditionalEvents()
     }
 
     override fun onResume() {

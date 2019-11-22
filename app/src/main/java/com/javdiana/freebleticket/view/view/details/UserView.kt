@@ -17,6 +17,5 @@ class UserView(context: Context) : LinearLayout(context) {
         nextEvent.text = "no"
         typeOfUser.text = user.type
         nameOfUser.text = user.name
-
     }
 }
