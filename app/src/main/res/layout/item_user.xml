@@ -5,40 +5,49 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageOrganizer"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:background="@drawable/view_background"
-        android:contentDescription="@string/content_description" />
+        android:contentDescription="@string/content_description"
+        android:scaleType="centerCrop"
+        android:src="@drawable/user_placeholder"
+        android:layout_margin="@dimen/item_spacing_4x"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/item_spacing_1x"
+        android:layout_marginBottom="@dimen/item_spacing_1x"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/nameOfOrganizator"
+            android:id="@+id/nameOfUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/work_sans_medium"
+            android:fontFamily="@font/work_sans_semi_bold"
+            android:textColor="@color/colorTitle"
             android:textSize="16sp"
             tools:text="Name" />
 
         <TextView
-            android:id="@+id/typeOrgsnizator"
+            android:id="@+id/typeOfUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.7"
             android:fontFamily="@font/work_sans_medium"
+            android:textColor="#C1C4C9"
+            android:textSize="@dimen/text_size_3x"
             tools:text="Type" />
 
         <TextView
-            android:id="@+id/dateOrganizator"
+            android:id="@+id/nextEvent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.7"
             android:fontFamily="@font/work_sans_medium"
+            android:textColor="#C1C4C9"
+            android:textSize="@dimen/text_size_3x"
             tools:text="date" />
 
     </LinearLayout>

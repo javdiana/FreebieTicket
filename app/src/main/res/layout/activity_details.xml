@@ -6,38 +6,34 @@
     android:id="@+id/detailsActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".view.view.details.DetailsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-    >
+        android:theme="@style/AppBarLayoutNoBar"
+        android:background="@color/colorBackgroundDark">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapsingToolbar"
+            android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="48dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:contentScrim="?attr/actionBarDivider"
+            app:layout_scrollFlags="scroll"
+            app:toolbarId="@+id/tbShowDetails"
+            android:background="@color/colorBackgroundDark">
 
-            <ImageView
-                android:id="@+id/imagePosterDetail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/content_description"
-                android:scaleType="centerCrop"
-                android:fitsSystemWindows="true"
-                app:layout_collapseMode="parallax"/>
+            <include
+                android:id="@+id/include_sheet"
+                layout="@layout/view_more_details_sheet" />
 
-            <Toolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/tbShowDetails"
+                style="@style/TextViewTitles"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
@@ -46,10 +42,179 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextViewTitleDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/details" />
+
+            <com.borjabravo.readmoretextview.ReadMoreTextView
+                android:id="@+id/detailsDetails"
+                style="@style/ReadMoreDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/item_spacing_4x"
+                app:colorClickableText="@color/colorPink"
+                app:trimLines="7"
+                tools:text="Free directories: time. It saves a lot of your time when you don’t have to resubmit your information every week…" />
+
+            <TextView
+                style="@style/TextViewTitleDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/updates" />
+
+            <TextView
+                android:id="@+id/tvDateUpdates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/item_spacing_4x"
+                android:layout_marginTop="@dimen/item_spacing_4x"
+                android:fontFamily="@font/work_sans_bold"
+                android:textColor="#616368"
+                android:textSize="15dp"
+                tools:text="@string/updates" />
+
+            <com.borjabravo.readmoretextview.ReadMoreTextView
+                android:id="@+id/updatesDetails"
+                style="@style/ReadMoreDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/item_spacing_4x"
+                android:layout_marginEnd="@dimen/item_spacing_4x"
+                android:layout_marginBottom="@dimen/item_spacing_4x"
+                app:colorClickableText="@color/colorPink"
+                app:trimLines="3"
+                tools:text="Free directories: time. It saves a lot of your time when you don’t have to resubmit your information every week…" />
+
+            <TextView
+                style="@style/TextViewTitleDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/item_spacing_4x"
+                android:layout_marginEnd="@dimen/item_spacing_4x">
+
+                <fragment
+                    android:id="@+id/mapLocationDetails"
+                    class="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageMyPositionDetails"
+                    android:layout_width="@dimen/item_spacing_12x"
+                    android:layout_height="@dimen/item_spacing_12x"
+                    android:layout_marginTop="@dimen/item_spacing_1x"
+                    android:layout_marginEnd="@dimen/item_spacing_1x"
+                    android:padding="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_my_position" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvPlaceDetailsMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/item_spacing_4x"
+                android:layout_marginTop="@dimen/item_spacing_2x"
+                android:layout_marginEnd="@dimen/item_spacing_4x"
+                android:fontFamily="@font/work_sans_bold"
+                android:text="15sp"
+                android:textColor="#616368"
+                tools:text="place" />
+
+            <TextView
+                android:id="@+id/tvAddressCountryDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/item_spacing_4x"
+                android:layout_marginTop="@dimen/item_spacing_2x"
+                android:layout_marginEnd="@dimen/item_spacing_4x"
+                android:fontFamily="@font/work_sans_regular"
+                android:text="15sp"
+                android:textColor="#616368"
+                tools:text="address" />
+
+            <TextView
+                style="@style/TextViewTitleDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/performers" />
+
+            <LinearLayout
+                android:id="@+id/layoutPerformers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_spacing_6x"
+                android:layout_marginEnd="@dimen/item_spacing_4x"
+                android:orientation="vertical" />
+
+            <TextView
+                style="@style/TextViewTitleDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/organizers" />
+
+            <LinearLayout
+                android:id="@+id/layoutOrganizers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/item_spacing_4x"
+                android:orientation="vertical" />
+
+            <TextView
+                style="@style/TextViewTitleDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:text="@string/also_in_this_avenue" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAdditionalEvents"
+                android:layout_width="match_parent"
+                android:layout_height="172dp"
+                android:clipToPadding="true"
+                android:paddingStart="@dimen/item_spacing_4x" />
+
+            <TextView
+                style="@style/TextViewTitleDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/more_like_this" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMoreEvents"
+                android:layout_width="match_parent"
+                android:layout_height="172dp"
+                android:layout_marginBottom="180dp"
+                android:clipToPadding="true"
+                android:paddingStart="@dimen/item_spacing_4x" />
+        </LinearLayout>
+
+    </ScrollView>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <ImageView
             android:id="@+id/imageBackDetails"
@@ -60,9 +225,9 @@
             android:clickable="true"
             android:contentDescription="@string/content_description"
             android:focusable="true"
-            app:srcCompat="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
 
         <ImageView
             android:id="@+id/imageLikeDetails"
@@ -73,9 +238,9 @@
             android:clickable="true"
             android:contentDescription="@string/content_description"
             android:focusable="true"
-            app:srcCompat="@drawable/ic_heard_with_borders"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_heard_with_borders" />
 
         <ImageView
             android:id="@+id/imageUploadDetails"
@@ -86,25 +251,9 @@
             android:clickable="true"
             android:contentDescription="@string/content_description"
             android:focusable="true"
-            app:srcCompat="@drawable/ic_upload"
             app:layout_constraintEnd_toStartOf="@+id/imageLikeDetails"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-
-            <include
-                android:id="@+id/include_sheet"
-                layout="@layout/view_more_details_sheet" />
-
-        </LinearLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_upload" />
 
         <View
             android:id="@+id/view2"
@@ -118,7 +267,7 @@
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="90dp"
             android:background="@color/colorBackgroundDark"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -166,5 +315,7 @@
                 android:text="@string/buy_tickets"
                 android:textColor="@color/colorPink" />
         </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

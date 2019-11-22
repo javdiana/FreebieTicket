@@ -15,8 +15,10 @@ data class Event(
     val updates: String,
     val imagePoster: String,
     val location: LatLng,
-    val performers: List<Performer>,
-    val organizers: List<Performer>,
+    val performers: ArrayList<User>,
+    val organizers: ArrayList<User>,
     val source: String,
-    val typeCategory: TypeCategory
+    val typeCategory: TypeCategory,
+    val address: String,
+    val country: String
 )

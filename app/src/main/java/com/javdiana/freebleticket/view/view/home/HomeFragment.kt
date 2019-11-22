@@ -1,10 +1,12 @@
 package com.javdiana.freebleticket.view.view.home
 
+import android.app.Activity
 import android.content.Intent
+import android.content.pm.ActivityInfo
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -12,11 +14,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.javdiana.freebleticket.R
 import com.javdiana.freebleticket.view.extensions.getMonth
 import com.javdiana.freebleticket.view.model.entity.Event
-import com.javdiana.freebleticket.view.view.adapter.EventsAdapter
 import com.javdiana.freebleticket.view.view.adapter.CategoryAdapter
+import com.javdiana.freebleticket.view.view.adapter.EventsAdapter
 import com.javdiana.freebleticket.view.view.details.DetailsActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.viewmodel.ext.android.viewModel
+
 
 class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModel()
@@ -29,12 +32,16 @@ class HomeFragment : Fragment() {
 
     private val deleteItem: (Event) -> Unit = {
         homeViewModel.deleteEvent(it)
-        //homeViewModel.getListEvents()
     }
 
     private val adapterEvent = EventsAdapter(R.layout.item_event, detailItem, deleteItem)
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        initStatusBar()
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
@@ -51,7 +58,25 @@ class HomeFragment : Fragment() {
         initUpcomingEvents()
     }
 
+    override fun onResume() {
+        super.onResume()
+        initStatusBar()
+    }
 
+    private fun initStatusBar() {
+        activity?.let {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                it.window.apply {
+                    clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+                    addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        statusBarColor = Color.TRANSPARENT
+                        decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                    }
+                }
+            }
+        }
+    }
 
     private fun initEvents() {
         rvEvents.layoutManager =
