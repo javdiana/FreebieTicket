@@ -62,6 +62,11 @@
                 android:layout_marginTop="@dimen/item_spacing_4x"
                 android:clipToPadding="false"/>
 
+            <include
+                android:id="@+id/filters"
+                layout="@layout/filters_view"
+                android:visibility="gone"/>
+
             <TextView
                 style="@style/TextViewTitles"
                 android:layout_width="wrap_content"

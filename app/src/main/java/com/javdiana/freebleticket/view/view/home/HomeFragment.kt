@@ -10,9 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.javdiana.freebleticket.R
-import com.javdiana.freebleticket.view.extensions.TAG_HOME_MAP
 import com.javdiana.freebleticket.view.extensions.getMonth
-import com.javdiana.freebleticket.view.extensions.updateStatusBar
 import com.javdiana.freebleticket.view.model.entity.Event
 import com.javdiana.freebleticket.view.view.adapter.CategoryAdapter
 import com.javdiana.freebleticket.view.view.adapter.EventsAdapter
@@ -55,6 +53,8 @@ class HomeFragment : Fragment() {
         initCollections()
         initDiscovers()
         initUpcomingEvents()
+
+        buttonSetFilters.setOnClickListener { setFilters() }
     }
 
     private fun initEvents() {
@@ -107,4 +107,15 @@ class HomeFragment : Fragment() {
         upcomingEventViewTomorrow.createView(event1, deleteItem, size)
         upcomingEventViewDayAfterTomorrow.createView(event2, deleteItem, size)
     }
+
+    private fun setFilters() {
+        if (filters.visibility == View.GONE) {
+            rvEvents.visibility = View.GONE
+            filters.visibility = View.VISIBLE
+        } else {
+            rvEvents.visibility = View.VISIBLE
+            filters.visibility = View.GONE
+        }
+    }
+
 }
