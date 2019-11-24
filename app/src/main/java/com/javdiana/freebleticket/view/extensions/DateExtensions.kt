@@ -8,10 +8,8 @@ import java.util.*
 private const val DAY_OF_WEEK_MAX = "EEEE"
 private const val DAY_OF_WEEK_MIN = "EEE"
 private const val DAY_OF_MONTH = "dd"
-private const val DAY_OF_YEAR = "DD"
 private const val MONTH_MAX = "MMMM"
 private const val MONTH_MIN = "MMM"
-private const val MONTH_NUMBER = "MM"
 private const val TIME = "Ha"
 private const val YEAR = "yyyy"
 
@@ -38,7 +36,7 @@ fun Long.formatToLongForDetails(): String {
 }
 
 fun Int.getNextDateToLong(): Long {
-    sdf = SimpleDateFormat(MONTH_MIN)
+    sdf = SimpleDateFormat(MONTH_MIN, Locale.ENGLISH)
     val c = Calendar.getInstance()
     c.set(Calendar.DAY_OF_YEAR, c.get(Calendar.DAY_OF_YEAR) + this)
     return c.timeInMillis

@@ -1,12 +1,9 @@
 package com.javdiana.freebleticket.view.view.tickets
 
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,7 +20,6 @@ class TicketsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        initStatusBar()
 
         return inflater.inflate(R.layout.fragment_tickets, container, false)
     }
@@ -33,19 +29,6 @@ class TicketsFragment : Fragment() {
         ticketsViewModel.getListCategories()
 
         initCategories()
-    }
-
-    private fun initStatusBar() {
-        activity!!.let {
-            it.window.apply {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-                    addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-                    decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    statusBarColor = Color.TRANSPARENT
-                }
-            }
-        }
     }
 
     private fun initCategories() {

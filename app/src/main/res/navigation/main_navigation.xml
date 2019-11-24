@@ -13,7 +13,7 @@
     <fragment
         android:id="@+id/search"
         android:name="com.javdiana.freebleticket.view.view.map.MapFragment"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_map" />
 
     <fragment
         android:id="@+id/tickets"

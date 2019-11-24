@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_spacing_8x"
         android:layout_marginTop="@dimen/item_spacing_8x"
-        android:clipToPadding="true"
+        android:clipToPadding="false"
         android:paddingStart="@dimen/item_spacing_4x"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

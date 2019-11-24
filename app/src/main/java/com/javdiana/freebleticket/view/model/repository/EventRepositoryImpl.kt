@@ -6,7 +6,10 @@ import com.javdiana.freebleticket.view.model.entity.*
 
 class EventRepositoryImpl : EventRepository {
 
-    private lateinit var events: ArrayList<Event>
+    companion object {
+        private lateinit var events: ArrayList<Event>
+    }
+
     private lateinit var upcomingEvents: ArrayList<Event>
 
     override fun getEvent(id: Long): Event {

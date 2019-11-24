@@ -1,23 +1,14 @@
 package com.javdiana.freebleticket.view.view.details
 
-import android.Manifest
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.view.WindowManager
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.javdiana.freebleticket.R
-import com.javdiana.freebleticket.view.extensions.formatToLongForDetails
-import com.javdiana.freebleticket.view.extensions.getMonthDayYear
-import com.javdiana.freebleticket.view.extensions.toast
+import com.javdiana.freebleticket.view.extensions.*
 import com.javdiana.freebleticket.view.model.entity.Event
 import com.javdiana.freebleticket.view.model.entity.Role
 import com.javdiana.freebleticket.view.model.entity.User
@@ -31,6 +22,9 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailsActivity : AppCompatActivity() {
     private val detailsViewModel: DetailsViewModel by viewModel()
+    private val setPermissionsLocation: () -> Unit = {
+        this.setLocationPermissions()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,8 +32,10 @@ class DetailsActivity : AppCompatActivity() {
 
         val toolbar = findViewById<Toolbar>(R.id.tbShowDetails)
         setSupportActionBar(toolbar)
+        if(supportActionBar != null) {
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        }
 
-        initStatusBar()
         initEvent()
 
         detailsViewModel.getAdditionalEvents()
@@ -47,19 +43,14 @@ class DetailsActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        initStatusBar()
+        this.updateStatusBar(TAG_ACTIVITY_DETAIL)
     }
 
-    private fun initStatusBar() {
-        window.apply {
-            clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-            addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-            decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                statusBarColor = Color.TRANSPARENT
-            }
-        }
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        this.updateStatusBar(TAG_ACTIVITY_DETAIL)
     }
+
 
     private fun initEvent() {
         val id = intent.getLongExtra(EVENT_ID, 0L)
@@ -70,13 +61,8 @@ class DetailsActivity : AppCompatActivity() {
         })
     }
 
-    private val showMessage: () -> Unit = {
-        toast(getString(R.string.internet_gps_validation))
-    }
-
     private fun initViews(event: Event) {
-        val collapsingToolbar = findViewById<CollapsingToolbarLayout>(R.id.toolbar_layout)
-        collapsingToolbar.title = event.name
+        toolbar_layout.title = event.name
 
         detailsActivity.costResultDetail.text = String.format(
             resources.getString(R.string.show_2_string),
@@ -88,21 +74,16 @@ class DetailsActivity : AppCompatActivity() {
             finish()
         }
 
-        titleDetails.text = event.name
         tvDateDetails.text = (event.date).formatToLongForDetails()
         tvAddressCountry.text = String.format("%s, %s", event.address, event.country)
         tvLocationDetails.text = event.place
         tvTypeDetails.text = event.typeMusic
-        tvCostDetails.text = String.format(
-            resources.getString(R.string.show_2_string),
-            event.costLow,
-            event.costHigh
-        )
+        tvCostDetails.text = String.format(resources.getString(R.string.show_2_string), event.costLow, event.costHigh)
         tvPlaceDetails.text = event.place
         sourceDetail.text = event.source
 
-        detailsDetails.setText(String.format(event.details + "\n\n"))
-        updatesDetails.setText(String.format(event.updates + "\n\n"))
+        detailsDetails.text = String.format(event.details + "\n\n")
+        updatesDetails.text = String.format(event.updates + "\n\n")
 
         tvDateUpdates.text = event.date.getMonthDayYear()
         tvPlaceDetailsMain.text = event.place
@@ -110,7 +91,7 @@ class DetailsActivity : AppCompatActivity() {
 
         val mapFragment =
             supportFragmentManager.findFragmentById(R.id.mapLocationDetails) as SupportMapFragment
-        val map = ConfigMap(this, mapFragment, arrayListOf(event), showMessage)
+        val map = ConfigMap(this, mapFragment, arrayListOf(event))
         imageMyPositionDetails.setOnClickListener { map.setMyLocation(setPermissionsLocation) }
 
         initUsers(event.performers)
@@ -118,17 +99,7 @@ class DetailsActivity : AppCompatActivity() {
 
         initAdditionalEvents()
 
-        imageBackDetails.setOnClickListener { finish() }
-        imageLikeDetails.setOnClickListener { }
-        imageUploadDetails.setOnClickListener { }
-    }
-
-    private val setPermissionsLocation: () -> Unit = {
-        val permissions = arrayOf(
-            Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.ACCESS_COARSE_LOCATION
-        )
-        ActivityCompat.requestPermissions(this, permissions, 0)
+//        imageBackDetails.setOnClickListener { finish() }
     }
 
     private fun initUsers(users: ArrayList<User>) {

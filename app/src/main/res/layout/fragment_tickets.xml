@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -28,24 +28,29 @@
             android:paddingStart="@dimen/item_spacing_4x"
             tools:ignore="RtlSymmetry"
             android:layout_marginTop="@dimen/item_spacing_6x"
-            android:clipToPadding="true"/>
+            android:clipToPadding="false"/>
     </LinearLayout>
 
     <TextView
+        style="@style/TextViewTitles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="@string/no_tickets_bought"
-        style="@style/TextViewTitles"
-        android:layout_gravity="center"/>
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/it_appears_you_haven_t_bought_any_tickets_yet_n_maybe_try_searching_these"
-        android:textSize="@dimen/text_size_4x"
         android:fontFamily="@font/work_sans_medium"
         android:gravity="center_horizontal"
-        android:layout_marginStart="@dimen/item_spacing_4x"
-        android:layout_marginEnd="@dimen/item_spacing_4x"/>
+        android:text="@string/it_appears_you_haven_t_bought_any_tickets_yet_n_maybe_try_searching_these"
+        android:textSize="@dimen/text_size_4x"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/item_spacing_12x"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
