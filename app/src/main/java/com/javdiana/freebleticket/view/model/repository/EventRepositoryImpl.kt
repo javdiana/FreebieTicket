@@ -79,12 +79,12 @@ class EventRepositoryImpl : EventRepository {
     override fun getUpcomingEvents(): ArrayList<Event> {
         upcomingEvents = arrayListOf(
             Event(
-                3, "Event 4", "22-11-2019 3AM".formatToLong(), "Rock music",
+                3, "Event 4", "25-11-2019 3AM".formatToLong(), "Rock music",
                 50, 70, "", "Goyra club", "", "", "",
                 LatLng(30.0, 30.0), arrayListOf(), arrayListOf(), "radio NV", TypeCategory.SPORT, "", ""
             ),
             Event(
-                4, "Event 5", "23-11-2019 3AM".formatToLong(), "Rock music",
+                4, "Event 5", "26-11-2019 3AM".formatToLong(), "Rock music",
                 50, 70, "", "Dolche club", "", "", "",
                 LatLng(40.0, 40.0), arrayListOf(), arrayListOf(), "radio NV", TypeCategory.MUSIC, "", ""
             )

@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.javdiana.freebleticket.R
 import com.javdiana.freebleticket.view.extensions.getMonth
+import com.javdiana.freebleticket.view.extensions.updateStatusBar
 import com.javdiana.freebleticket.view.model.entity.Event
 import com.javdiana.freebleticket.view.view.adapter.CategoryAdapter
 import com.javdiana.freebleticket.view.view.adapter.EventsAdapter
@@ -55,6 +56,11 @@ class HomeFragment : Fragment() {
         initUpcomingEvents()
 
         buttonSetFilters.setOnClickListener { setFilters() }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        activity?.updateStatusBar("TAG_HOME_MAP")
     }
 
     private fun initEvents() {

@@ -34,10 +34,6 @@ class ConfigMap(
         map = googleMap
 
         map?.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.map_style))
-        map?.let {
-            it.uiSettings.isCompassEnabled = true
-            it.isIndoorEnabled = true
-        }
 
         events.let {
             it.filter { event -> event.typeCategory == TypeCategory.MUSIC }.map { e ->

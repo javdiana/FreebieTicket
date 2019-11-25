@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,18 +10,18 @@
         android:id="@+id/imageOrganizer"
         android:layout_width="64dp"
         android:layout_height="64dp"
+        android:layout_margin="@dimen/item_spacing_4x"
         android:contentDescription="@string/content_description"
         android:scaleType="centerCrop"
-        android:src="@drawable/user_placeholder"
-        android:layout_margin="@dimen/item_spacing_4x"/>
+        android:src="@drawable/user_placeholder" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_marginTop="@dimen/item_spacing_1x"
         android:layout_marginBottom="@dimen/item_spacing_1x"
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/nameOfUser"

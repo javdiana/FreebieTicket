@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/btnCategoryItem"
     android:layout_width="wrap_content"
@@ -16,7 +17,7 @@
         android:layout_marginStart="@dimen/item_spacing_3x"
         android:layout_marginEnd="@dimen/item_spacing_3x"
         android:fontFamily="@font/work_sans_bold"
-        android:textSize="@dimen/text_size_3x"
         android:textColor="@color/colorPink"
+        android:textSize="@dimen/text_size_3x"
         tools:text="You area" />
 </LinearLayout>

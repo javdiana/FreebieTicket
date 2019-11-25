@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/tickets_placeholder">
+        android:background="@drawable/tickets_placeholder"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            style="@style/TextViewTitles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/popular"
-            style="@style/TextViewTitles"
-            android:textColor="@color/colorWhite"
+            android:layout_marginStart="@dimen/item_spacing_4x"
             android:layout_marginTop="64dp"
-            android:layout_marginStart="@dimen/item_spacing_4x"/>
+            android:text="@string/popular"
+            android:textColor="@color/colorWhite" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCategoriesPopular"
             android:layout_width="match_parent"
             android:layout_height="@dimen/item_spacing_8x"
-            android:paddingStart="@dimen/item_spacing_4x"
-            tools:ignore="RtlSymmetry"
             android:layout_marginTop="@dimen/item_spacing_6x"
-            android:clipToPadding="false"/>
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/item_spacing_4x"
+            tools:ignore="RtlSymmetry" />
     </LinearLayout>
 
     <TextView
@@ -45,12 +49,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/item_spacing_12x"
         android:fontFamily="@font/work_sans_medium"
         android:gravity="center_horizontal"
         android:text="@string/it_appears_you_haven_t_bought_any_tickets_yet_n_maybe_try_searching_these"
         android:textSize="@dimen/text_size_4x"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="@dimen/item_spacing_12x"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

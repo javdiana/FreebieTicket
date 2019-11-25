@@ -7,6 +7,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener
+import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.javdiana.freebleticket.R
 import com.javdiana.freebleticket.view.extensions.*
 import com.javdiana.freebleticket.view.model.entity.Event
@@ -32,13 +34,14 @@ class DetailsActivity : AppCompatActivity() {
 
         val toolbar = findViewById<Toolbar>(R.id.tbShowDetails)
         setSupportActionBar(toolbar)
-        if(supportActionBar != null) {
+        if (supportActionBar != null) {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
 
         initEvent()
 
         detailsViewModel.getAdditionalEvents()
+        this.updateStatusBar(TAG_ACTIVITY_DETAIL)
     }
 
     override fun onResume() {
@@ -62,7 +65,7 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     private fun initViews(event: Event) {
-        toolbar_layout.title = event.name
+        initColapsingToolBar(event.name)
 
         detailsActivity.costResultDetail.text = String.format(
             resources.getString(R.string.show_2_string),
@@ -78,7 +81,11 @@ class DetailsActivity : AppCompatActivity() {
         tvAddressCountry.text = String.format("%s, %s", event.address, event.country)
         tvLocationDetails.text = event.place
         tvTypeDetails.text = event.typeMusic
-        tvCostDetails.text = String.format(resources.getString(R.string.show_2_string), event.costLow, event.costHigh)
+        tvCostDetails.text = String.format(
+            resources.getString(R.string.show_2_string),
+            event.costLow,
+            event.costHigh
+        )
         tvPlaceDetails.text = event.place
         sourceDetail.text = event.source
 
@@ -98,8 +105,6 @@ class DetailsActivity : AppCompatActivity() {
         initUsers(event.organizers)
 
         initAdditionalEvents()
-
-//        imageBackDetails.setOnClickListener { finish() }
     }
 
     private fun initUsers(users: ArrayList<User>) {
@@ -131,6 +136,39 @@ class DetailsActivity : AppCompatActivity() {
             adapterAdditionalEvents.submitList(it)
             adapterMoreEvents.submitList(it)
         })
+    }
+
+    private fun initColapsingToolBar(title: String) {
+        val collapsingToolbar = findViewById<CollapsingToolbarLayout>(R.id.toolbar_layout)
+        appBar.addOnOffsetChangedListener(OnOffsetChangedListener { appBarLayout, verticalOffset ->
+            if (Math.abs(verticalOffset) - appBarLayout.totalScrollRange == 0) {
+                collapsingToolbar.title = title
+                changeColorLayoutButtons(true)
+            } else {
+                collapsingToolbar.title = ""
+                changeColorLayoutButtons(false)
+            }
+        })
+    }
+
+    private fun changeColorLayoutButtons(isExpandedBar: Boolean) {
+        if (isExpandedBar) {
+            linearLayout3.background = resources.getDrawable(R.color.colorWhite)
+            viewLine.background = resources.getDrawable(R.color.colorWhite)
+            buyTicketsDetail.background = resources.getDrawable(R.color.colorWhite)
+            costResultDetail.setTextColor(resources.getColor(R.color.colorBackgroundDark))
+            sourceDetail.setTextColor(resources.getColor(R.color.colorBackgroundDark))
+            butTicketsDetails.background = resources.getDrawable(R.drawable.button_buy_tickets_pink)
+            butTicketsDetails.setTextColor(resources.getColor(R.color.colorWhite))
+        } else {
+            linearLayout3.background = resources.getDrawable(R.color.colorBackgroundDark)
+            viewLine.background = resources.getDrawable(R.color.colorBackgroundDark)
+            buyTicketsDetail.background = resources.getDrawable(R.color.colorBackgroundDark)
+            costResultDetail.setTextColor(resources.getColor(R.color.colorWhite))
+            sourceDetail.setTextColor(resources.getColor(R.color.colorWhite))
+            butTicketsDetails.background = resources.getDrawable(R.drawable.button_buy_tickets_white)
+            butTicketsDetails.setTextColor(resources.getColor(R.color.colorPink))
+        }
     }
 
     companion object {

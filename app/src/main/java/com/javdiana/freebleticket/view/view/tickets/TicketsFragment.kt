@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.javdiana.freebleticket.R
+import com.javdiana.freebleticket.view.extensions.updateStatusBar
 import com.javdiana.freebleticket.view.view.adapter.CategoryAdapter
 import kotlinx.android.synthetic.main.fragment_tickets.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -29,6 +30,12 @@ class TicketsFragment : Fragment() {
         ticketsViewModel.getListCategories()
 
         initCategories()
+        activity?.updateStatusBar("TAG_ACTIVITY_DETAIL")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        activity?.updateStatusBar("TAG_ACTIVITY_DETAIL")
     }
 
     private fun initCategories() {

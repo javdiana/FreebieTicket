@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:theme="@style/SetLightTheme">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:background="@drawable/toolbar_background"
-        android:gravity="center">
+        android:gravity="center"
+        android:elevation="@dimen/item_spacing_2x">
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,7 +36,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/item_spacing_4x"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
 
                 <TextView
                     style="@style/TextViewTitles"
@@ -60,7 +64,8 @@
                 android:layout_height="256dp"
                 android:paddingStart="@dimen/item_spacing_4x"
                 android:layout_marginTop="@dimen/item_spacing_4x"
-                android:clipToPadding="false"/>
+                android:clipToPadding="false"
+                tools:ignore="RtlSymmetry" />
 
             <include
                 android:id="@+id/filters"
@@ -79,7 +84,8 @@
                 android:layout_height="160dp"
                 android:paddingStart="@dimen/item_spacing_4x"
                 android:layout_marginTop="@dimen/item_spacing_4x"
-                android:clipToPadding="false"/>
+                android:clipToPadding="false"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
                 style="@style/TextViewTitles"
@@ -102,7 +108,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/item_spacing_4x"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
 
                 <TextView
                     style="@style/TextViewTitles"

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/upcomingEventItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/item_spacing_4x"
     android:layout_marginBottom="@dimen/item_spacing_4x"
-    android:orientation="horizontal"
-    android:layout_marginTop="@dimen/item_spacing_4x">
+    android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -17,8 +18,8 @@
         <LinearLayout
             android:layout_width="40dp"
             android:layout_height="56dp"
-            android:layout_marginEnd="@dimen/item_spacing_4x"
             android:layout_marginStart="@dimen/item_spacing_4x"
+            android:layout_marginEnd="@dimen/item_spacing_4x"
             android:background="@drawable/date_background"
             android:gravity="center_vertical"
             android:orientation="vertical">
@@ -29,9 +30,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/work_sans_semi_bold"
-                tools:text="12"
                 android:textColor="#222834"
-                android:textSize="@dimen/text_size_5x" />
+                android:textSize="@dimen/text_size_5x"
+                tools:text="12" />
 
             <TextView
                 android:id="@+id/tvDayOfWeek"
@@ -39,29 +40,29 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/work_sans_bold"
-                tools:text="THU"
                 android:textColor="#c1c1c1"
-                android:textSize="@dimen/text_size_2_5x" />
+                android:textSize="@dimen/text_size_2_5x"
+                tools:text="THU" />
         </LinearLayout>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:contentDescription="@string/content_description"
-            android:src="@drawable/circles_placeholder"
-            android:layout_gravity="center_horizontal"/>
+            android:src="@drawable/circles_placeholder" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_marginEnd="@dimen/item_spacing_4x"
         android:layout_weight="1"
-        android:layout_marginEnd="@dimen/item_spacing_4x">
+        android:orientation="vertical">
 
-        <include layout="@layout/item_upcoming"/>
+        <include layout="@layout/item_upcoming" />
 
-        <include layout="@layout/item_size_upcomings"/>
+        <include layout="@layout/item_size_upcomings" />
     </LinearLayout>
 
 </LinearLayout>

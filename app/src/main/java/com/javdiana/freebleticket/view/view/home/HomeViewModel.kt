@@ -31,15 +31,15 @@ class HomeViewModel(
     }
 
     fun deleteEvent(event: Event) {
-        val ev = events.value
-        ev?.remove(event)
+//        val ev = events.value
+//        ev?.remove(event)
         eventRepository.deleteEvent(event)
-        events.value = ev
+        //events.value = ev
+        eventRepository.getEvents()
     }
 
 
     fun getListUpcomingEvents() {
-
         upcomingEvents.postValue(eventRepository.getUpcomingEvents())
         upcomingEvents.value?.let {
             it.filter { event -> event.date < 1.getNextDateToLong() && event.date > 3.getNextDateToLong() }

@@ -13,6 +13,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.javdiana.freebleticket.R
 import com.javdiana.freebleticket.R.layout.fragment_map
 import com.javdiana.freebleticket.view.extensions.setLocationPermissions
+import com.javdiana.freebleticket.view.extensions.updateStatusBar
 import com.javdiana.freebleticket.view.model.entity.Event
 import com.javdiana.freebleticket.view.view.ConfigMap
 import com.javdiana.freebleticket.view.view.adapter.CategoryAdapter
@@ -57,6 +58,11 @@ class MapFragment : Fragment() {
         })
 
         initViews()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        activity?.updateStatusBar("TAG_HOME_MAP")
     }
 
     private fun initCategories() {
