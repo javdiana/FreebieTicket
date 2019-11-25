@@ -41,19 +41,13 @@ class DetailsActivity : AppCompatActivity() {
         initEvent()
 
         detailsViewModel.getAdditionalEvents()
-        this.updateStatusBar(TAG_ACTIVITY_DETAIL)
+        this.updateStatusBar(DETAIL_TAG)
     }
 
     override fun onResume() {
         super.onResume()
-        this.updateStatusBar(TAG_ACTIVITY_DETAIL)
+        this.updateStatusBar(DETAIL_TAG)
     }
-
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        this.updateStatusBar(TAG_ACTIVITY_DETAIL)
-    }
-
 
     private fun initEvent() {
         val id = intent.getLongExtra(EVENT_ID, 0L)
@@ -173,5 +167,6 @@ class DetailsActivity : AppCompatActivity() {
 
     companion object {
         const val EVENT_ID = "EVENT_ID"
+        const val DETAIL_TAG = "DETAIL_TAG"
     }
 }

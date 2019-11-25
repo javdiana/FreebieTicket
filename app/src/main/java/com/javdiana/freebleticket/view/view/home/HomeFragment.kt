@@ -60,7 +60,7 @@ class HomeFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        activity?.updateStatusBar("TAG_HOME_MAP")
+        activity?.updateStatusBar(HOME_TAG)
     }
 
     private fun initEvents() {
@@ -122,6 +122,10 @@ class HomeFragment : Fragment() {
             rvEvents.visibility = View.VISIBLE
             filters.visibility = View.GONE
         }
+    }
+
+    companion object {
+        const val HOME_TAG = "HOME_TAG"
     }
 
 }

@@ -4,16 +4,17 @@ import android.app.Activity
 import android.content.Context
 import android.graphics.Color
 import android.os.Build
-import android.view.View
 import android.view.View.*
-import android.view.WindowManager.LayoutParams.*
+import android.view.WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
+import android.view.WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.javdiana.freebleticket.R
+import com.javdiana.freebleticket.view.view.details.DetailsActivity
+import com.javdiana.freebleticket.view.view.home.HomeFragment
+import com.javdiana.freebleticket.view.view.map.MapFragment
+import com.javdiana.freebleticket.view.view.tickets.TicketsFragment
 import com.readystatesoftware.systembartint.SystemBarTintManager
-
-const val TAG_ACTIVITY_DETAIL = "TAG_ACTIVITY_DETAIL"
-const val TAG_HOME_MAP = "TAG_HOME_MAP"
 
 fun Context.toast(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
@@ -21,18 +22,24 @@ fun Context.toast(message: String) {
 
 fun Activity.updateStatusBar(tag: String) {
     when (tag) {
-        TAG_ACTIVITY_DETAIL -> {
+        DetailsActivity.DETAIL_TAG -> {
             setTransparentStatusBar(this)
         }
-        TAG_HOME_MAP -> {
+        HomeFragment.HOME_TAG -> {
             setWhiteStatusBar(this)
+        }
+        MapFragment.MAP_TAG -> {
+            setWhiteStatusBar(this)
+        }
+        TicketsFragment.TICKETS_TAG -> {
+            setTransparentStatusBar(this)
         }
     }
 }
 
 private fun setWhiteStatusBar(context: Activity) {
     context.window.apply {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT in 19..20) {
             addFlags(FLAG_TRANSLUCENT_STATUS)
             val tintManager = SystemBarTintManager(context)
             tintManager.isStatusBarTintEnabled = true
@@ -45,11 +52,7 @@ private fun setWhiteStatusBar(context: Activity) {
             statusBarColor = Color.TRANSPARENT
         }
         if (Build.VERSION.SDK_INT >= 23) {
-            clearFlags(FLAG_TRANSLUCENT_STATUS)
             addFlags(FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-            val tintManager = SystemBarTintManager(context)
-            tintManager.isStatusBarTintEnabled = true
-            tintManager.setTintColor(Color.WHITE)
             decorView.systemUiVisibility = SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             statusBarColor = Color.WHITE
         }
@@ -67,10 +70,9 @@ private fun setTransparentStatusBar(context: Activity) {
                 FLAG_TRANSLUCENT_STATUS or FLAG_TRANSLUCENT_STATUS
         }
         if (Build.VERSION.SDK_INT >= 23) {
-            clearFlags(FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             addFlags(FLAG_TRANSLUCENT_STATUS)
+            decorView.systemUiVisibility = SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
             statusBarColor = Color.TRANSPARENT
-            decorView.systemUiVisibility = SYSTEM_UI_FLAG_LAYOUT_STABLE or SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         }
     }
 }

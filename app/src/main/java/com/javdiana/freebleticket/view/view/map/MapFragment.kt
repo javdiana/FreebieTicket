@@ -62,7 +62,7 @@ class MapFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        activity?.updateStatusBar("TAG_HOME_MAP")
+        activity?.updateStatusBar(MAP_TAG)
     }
 
     private fun initCategories() {
@@ -79,6 +79,10 @@ class MapFragment : Fragment() {
         imageMyLocation.setOnClickListener {
             configMap.setMyLocation(setPermissionsLocation)
         }
+    }
+
+    companion object {
+        const val MAP_TAG = "MAP_TAG"
     }
 
 }

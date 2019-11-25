@@ -30,12 +30,12 @@ class TicketsFragment : Fragment() {
         ticketsViewModel.getListCategories()
 
         initCategories()
-        activity?.updateStatusBar("TAG_ACTIVITY_DETAIL")
+        activity?.updateStatusBar(TICKETS_TAG)
     }
 
     override fun onResume() {
         super.onResume()
-        activity?.updateStatusBar("TAG_ACTIVITY_DETAIL")
+        activity?.updateStatusBar(TICKETS_TAG)
     }
 
     private fun initCategories() {
@@ -46,6 +46,10 @@ class TicketsFragment : Fragment() {
         ticketsViewModel.categories.observe(this, Observer {
             adapter.submitList(it)
         })
+    }
+
+    companion object {
+        const val TICKETS_TAG = "TICKETS_TAG"
     }
 
 }

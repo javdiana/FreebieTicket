@@ -6,7 +6,8 @@
     android:id="@+id/detailsActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.view.details.DetailsActivity">
+    tools:context=".view.view.details.DetailsActivity"
+    android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -247,7 +248,7 @@
             android:id="@+id/imageLikeDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/item_spacing_7x"
+            android:layout_marginTop="@dimen/item_spacing_3x"
             android:layout_marginEnd="@dimen/item_spacing_4x"
             android:clickable="true"
             android:contentDescription="@string/content_description"
@@ -260,7 +261,7 @@
             android:id="@+id/imageUploadDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/item_spacing_7x"
+            android:layout_marginTop="@dimen/item_spacing_3x"
             android:layout_marginEnd="@dimen/item_spacing_1x"
             android:clickable="true"
             android:contentDescription="@string/content_description"
