@@ -51,6 +51,7 @@ private fun setWhiteStatusBar(context: Activity) {
             tintManager.isStatusBarTintEnabled = true
             tintManager.setTintColor(Color.WHITE)
             decorView.systemUiVisibility = SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+            statusBarColor = Color.WHITE
         }
     }
 }
@@ -68,7 +69,7 @@ private fun setTransparentStatusBar(context: Activity) {
         if (Build.VERSION.SDK_INT >= 23) {
             clearFlags(FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             addFlags(FLAG_TRANSLUCENT_STATUS)
-            context.window.statusBarColor = Color.TRANSPARENT
+            statusBarColor = Color.TRANSPARENT
             decorView.systemUiVisibility = SYSTEM_UI_FLAG_LAYOUT_STABLE or SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         }
     }

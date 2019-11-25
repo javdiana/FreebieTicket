@@ -8,7 +8,6 @@
     android:layout_height="256dp"
     android:layout_marginEnd="@dimen/item_spacing_4x"
     android:background="@drawable/item_shadows"
-    android:elevation="@dimen/item_spacing_2x"
     android:orientation="vertical">
 
     <com.makeramen.roundedimageview.RoundedImageView

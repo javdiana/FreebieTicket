@@ -215,6 +215,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="172dp"
                         android:clipToPadding="false"
+                        android:layout_marginTop="@dimen/item_spacing_4x"
                         android:paddingStart="@dimen/item_spacing_4x"
                         tools:ignore="RtlSymmetry" />
 
@@ -231,6 +232,7 @@
                         android:layout_marginBottom="180dp"
                         android:clipToPadding="false"
                         android:paddingStart="@dimen/item_spacing_4x"
+                        android:layout_marginTop="@dimen/item_spacing_4x"
                         tools:ignore="RtlSymmetry" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

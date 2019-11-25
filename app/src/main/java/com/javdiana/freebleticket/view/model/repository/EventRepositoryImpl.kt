@@ -40,7 +40,6 @@ class EventRepositoryImpl : EventRepository {
         val organizers = arrayListOf(
             User(0, "Organizer1", "", "Indle rock", "21-08-2019 3AM".formatToLong(), Role.ORGANIZER ))
 
-
         events = arrayListOf(
             Event(
                 0, "Event 1", "21-05-2019 5AM".formatToLong(), "Indle rock",
@@ -63,13 +62,13 @@ class EventRepositoryImpl : EventRepository {
             Event(
                 3, "Event 4", "22-02-2019 1AM".formatToLong(), "Rock music",
                 50, 70, "", "Goyra club", details, updates, "",
-                LatLng(48.290900, 30.055551), arrayListOf(), arrayListOf(), "radio NV", TypeCategory.SPORT,
+                LatLng(48.290900, 30.055551), performers, organizers, "radio NV", TypeCategory.SPORT,
                 "Golovna 11", "Germany"
             ),
             Event(
                 4, "Event 5", "23-01-2019 2AM".formatToLong(), "Rock music",
                 50, 70, "", "Dolche club", details, updates, "",
-                LatLng(48.290988, 25.932637), arrayListOf(), arrayListOf(), "radio NV", TypeCategory.MUSIC,
+                LatLng(48.290988, 25.932637), performers, organizers, "radio NV", TypeCategory.MUSIC,
                 "Golovna 11", "France"
             )
         )
