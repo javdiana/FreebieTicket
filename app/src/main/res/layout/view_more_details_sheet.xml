@@ -15,7 +15,8 @@
         android:layout_marginStart="@dimen/item_spacing_4x"
         android:layout_marginTop="@dimen/item_spacing_8x"
         android:gravity="bottom"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
 
         <ImageView
@@ -41,7 +42,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/item_spacing_4x"
         android:layout_marginTop="@dimen/item_spacing_4x"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
 
         <ImageView
@@ -69,7 +71,7 @@
         android:layout_marginStart="50dp"
         android:fontFamily="@font/work_sans_bold"
         android:textColor="#A6AAB1"
-        android:textSize="10dp"
+        android:textSize="10sp"
         tools:text="address country" />
 
     <LinearLayout
@@ -77,7 +79,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/item_spacing_4x"
         android:layout_marginTop="@dimen/item_spacing_4x"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
 
         <ImageView
@@ -103,7 +106,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/item_spacing_4x"
         android:layout_marginTop="@dimen/item_spacing_4x"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
 
         <ImageView
@@ -129,7 +133,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/item_spacing_4x"
         android:layout_marginTop="@dimen/item_spacing_4x"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
 
         <ImageView
