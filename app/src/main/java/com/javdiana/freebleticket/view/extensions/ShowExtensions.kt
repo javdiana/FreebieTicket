@@ -52,7 +52,8 @@ private fun setWhiteStatusBar(context: Activity) {
             statusBarColor = Color.TRANSPARENT
         }
         if (Build.VERSION.SDK_INT >= 23) {
-            addFlags(FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            //addFlags(FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            //clearFlags(SYSTEM_UI_FLAG_FULLSCREEN)
             decorView.systemUiVisibility = SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             statusBarColor = Color.WHITE
         }
@@ -70,8 +71,8 @@ private fun setTransparentStatusBar(context: Activity) {
                 FLAG_TRANSLUCENT_STATUS or FLAG_TRANSLUCENT_STATUS
         }
         if (Build.VERSION.SDK_INT >= 23) {
-            addFlags(FLAG_TRANSLUCENT_STATUS)
-            decorView.systemUiVisibility = SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            //addFlags(SYSTEM_UI_FLAG_FULLSCREEN)
+            decorView.systemUiVisibility = SYSTEM_UI_FLAG_FULLSCREEN
             statusBarColor = Color.TRANSPARENT
         }
     }

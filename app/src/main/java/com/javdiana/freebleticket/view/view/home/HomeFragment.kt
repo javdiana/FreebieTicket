@@ -69,7 +69,13 @@ class HomeFragment : Fragment() {
 
         rvEvents.adapter = adapterEvent
         homeViewModel.events.observe(this, Observer {
+            if (it.isEmpty()){
+                tvIsEventsEmpty.visibility = View.VISIBLE
+            } else {
+                tvIsEventsEmpty.visibility = View.GONE
+            }
             adapterEvent.submitList(it)
+            adapterEvent.notifyDataSetChanged()//find diff solution
         })
     }
 
@@ -116,10 +122,10 @@ class HomeFragment : Fragment() {
 
     private fun setFilters() {
         if (filters.visibility == View.GONE) {
-            rvEvents.visibility = View.GONE
+            containerRvEvents.visibility = View.GONE
             filters.visibility = View.VISIBLE
         } else {
-            rvEvents.visibility = View.VISIBLE
+            containerRvEvents.visibility = View.VISIBLE
             filters.visibility = View.GONE
         }
     }

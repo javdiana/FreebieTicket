@@ -58,14 +58,35 @@
 
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvEvents"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/containerRvEvents"
                 android:layout_width="match_parent"
                 android:layout_height="256dp"
-                android:paddingStart="@dimen/item_spacing_4x"
-                android:layout_marginTop="@dimen/item_spacing_4x"
-                android:clipToPadding="false"
-                tools:ignore="RtlSymmetry" />
+                android:layout_marginTop="@dimen/item_spacing_4x">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="256dp"
+                    android:clipToPadding="false"
+                    android:paddingStart="@dimen/item_spacing_4x"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/tvIsEventsEmpty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/you_have_not_events"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/rvEvents"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textAlignment="center"
+                    android:visibility="gone"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <include
                 android:id="@+id/filters"
