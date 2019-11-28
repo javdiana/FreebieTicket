@@ -31,11 +31,10 @@ class HomeViewModel(
     }
 
     fun deleteEvent(event: Event) {
-//        val ev = events.value
-//        ev?.remove(event)
         eventRepository.deleteEvent(event)
-        //events.value = ev
-        eventRepository.getEvents()
+        val ev = events.value
+        ev?.remove(event)
+        events.postValue(ev)
     }
 
 
